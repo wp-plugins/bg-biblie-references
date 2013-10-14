@@ -1,0 +1,61 @@
+=== Bg Bible References ===
+Contributors: Vadim Bogaiskov
+Tags: bible, scripture, references, jesus christ, holy bible, holy spirit, orthodox
+Requires at least: 3.0.1
+Tested up to: 3.6.1
+Stable tag: 0.4
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Description ==
+
+Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт Православной энциклопедии "Азбука веры" (http://azbyka.ru/biblia). 
+Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. Названия книг только по-русски. Не требуется никаких настроек. 
+Плагин обрабатывает ссылки следующего формата:
+	(Ин. 3:16), где «Ин.» - это название книги, 3 - это глава, а 16 - это номер стиха.
+	(Ин. 3:16—18) (Книга. Глава: с этого [—] по этот стих)
+	(Ин. 3:16—18, 21, 34—36) (Книга. Глава: с этого [—] по этот стих, этот стих, с этого [—] по этот стих)
+	(Ин. 3:16—18, 4:4—6) (Книга. Глава: с этого [—] по этот стих, глава: с этого [—] по этот стих)
+	(Мф. 5—6) (Книга. С этой [—] по эту главу). 
+Допускается указание ссылок в квадратных скобках и без точки после наименования книги. 
+При указании номера главы (сразу после названия книги) можно использовать запятую вместо двоеточия. 
+Пробелы игнорируются.
+ 
+The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
+The Bible is presented in Church, Russian, Greek, Hebrew and Latin. Titles of books in Russian only. Does not require any adjustments. 
+The plugin handles the references with the format:
+	(Ин. 3:16), where «Ин.» - book title, 3 - chapter, а 16 - verse number.
+	(Ин. 3:16—18) (Book. Chapter: from this verse [—] till this verse)
+	(Ин. 3:16—18, 21, 34—36) (Book. Chapter: from this verse [—] till this verse, this verse, from this verse [—] till this verse)
+	(Ин. 3:16—18, 4:4—6) (Book. Chapter: from this verse [—] till this verse, chapter: from this verse [—] till this verse)
+	(Мф. 5—6) (Book. From this chapter [—] till this chapter). 
+You can specify the reference in brackets and without a point after the title of the book. 
+If you specify a chapter (after the title of the book), you can use comma instead of colon.
+Spaces are ignored.
+
+== Installation ==
+
+1. Upload 'bg_bibrefs' directory to the '/wp-content/plugins/' directory
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+
+== Changelog ==
+
+= 0.4 =
+* Major changed algorithm. Now available complex references, such as (Ин. 3:16—18, 4:4—6)
+* Added new abbreviations 
+
+= 0.3 =
+* Optimized algorithm, added format of reference in brackets
+* Script are uploaded before in footer </body> tag. Loading of the script is independent the availability of wp_head and wp_footer in WP theme.
+
+= 0.2 =
+* Added references  (Ин.1:4,12-15), (Ин 1:4,12-15)
+* Script are uploaded in the <head> section now (before in footer).
+
+= 0.1 =
+* Plugin in beta testing mode
+
+== License ==
+
+GNU General Public License v2
+
