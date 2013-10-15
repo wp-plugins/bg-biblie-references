@@ -38,12 +38,10 @@ Spaces are ignored.
 
 == Installation ==
 
-1. Upload 'bg_bibrefs' directory to the '/wp-content/plugins/' directory
+1. Upload 'bg-biblie-references' directory to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
-
-F.A.Q. only in Russian.
 
 = How do I know that the script works? =
 
