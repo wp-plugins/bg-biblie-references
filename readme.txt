@@ -10,7 +10,7 @@ Requires at least: 3.0.1
 
 Tested up to: 3.6.1
 
-Stable tag: 0.5
+Stable tag: trunk
 
 License: GPLv2
 
