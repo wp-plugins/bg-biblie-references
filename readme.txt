@@ -8,6 +8,8 @@ Stable tag: 0.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+will highlight references to the Bible text with links to site of "The Alphabet of Faith"
+
 == Description ==
 
 Russian:
