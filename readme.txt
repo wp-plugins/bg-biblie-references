@@ -1,14 +1,16 @@
-=== Bg Bible References ===
+﻿=== Bg Bible References ===
 Contributors: Vadim Bogaiskov
-Tags: bible, scripture, references, jesus christ, holy bible, holy spirit, orthodox
+Donate link: http://bogaiskov.ru/about-me/donate/
+Tags: bible, scripture, references, jesus christ, holy bible, holy spirit, orthodox, Библия, православие, христианство, Священное Писание, Новый Завет, Ветхий Завет
 Requires at least: 3.0.1
 Tested up to: 3.6.1
-Stable tag: 0.4
+Stable tag: 0.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
+Russian:
 Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт Православной энциклопедии "Азбука веры" (http://azbyka.ru/biblia). 
 Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. Названия книг только по-русски. Не требуется никаких настроек. 
 Плагин обрабатывает ссылки следующего формата:
@@ -20,7 +22,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Допускается указание ссылок в квадратных скобках и без точки после наименования книги. 
 При указании номера главы (сразу после названия книги) можно использовать запятую вместо двоеточия. 
 Пробелы игнорируются.
- 
+
+English: 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
 The Bible is presented in Church, Russian, Greek, Hebrew and Latin. Titles of books in Russian only. Does not require any adjustments. 
 The plugin handles the references with the format:
@@ -38,7 +41,30 @@ Spaces are ignored.
 1. Upload 'bg_bibrefs' directory to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
+== Frequently Asked Questions ==
+
+F.A.Q. only in Russian.
+
+= How do I know that the script works? =
+
+Any references to Bible verses on your page will be replaced by hyperlink.
+
+= Why can't I use a script? =
+
+* Make sure that your browser supports JavaScript, and JavaScript enabled in your browser.
+* Verify that the reference to the Bible is framed in accordance with the generally accepted rules.
+
+== Screenshots ==
+
+1. An example work of the plugin - highlight references
+2. Page of Bible verses
+
 == Changelog ==
+
+= 0.5 =
+* Allowed см.:(see) just after the opening bracket. Options: см.: / см. / см: / см
+* New: Pop-up window when you specify the cursor on the link contains the full title of the book of the Bible.
+* Fixed some bugs 
 
 = 0.4 =
 * Major changed algorithm. Now available complex references, such as (Ин. 3:16—18, 4:4—6)
@@ -54,6 +80,20 @@ Spaces are ignored.
 
 = 0.1 =
 * Plugin in beta testing mode
+
+== Upgrade Notice ==
+
+= 0.5 =
+Development of plugins. Fixed of errors detected.
+
+= 0.4 =
+Development of plugins. Fixed of errors detected.
+
+= 0.3 =
+Enhance feature. Fixed of errors detected. Upgrade immediately.
+
+= 0.2 =
+Enhance feature. Fixed of errors detected. Upgrade immediately.
 
 == License ==
 
