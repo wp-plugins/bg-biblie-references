@@ -81,6 +81,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 0.6 =
+
+* Fixed a bug causing a conflict with other plugins.
+
 = 0.5 =
 
 * Allowed см.:(see) just after the opening bracket. Options: см.: / см. / см: / см
@@ -106,25 +110,23 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 * Plugin in beta testing mode
 
-
 == Upgrade Notice ==
 
+= 0.6 =
+
+* Conflict with other plugins: $content was not filtered. Error fixed. Upgrade immediately.
 
 = 0.5 =
 
 * Development of plugins. Fixed of errors detected.
 
-
 = 0.4 =
 
 * Development of plugins. Fixed of errors detected.
 
-
 = 0.3 =
 
-
 * Enhance feature. Fixed of errors detected. Upgrade immediately.
-
 
 = 0.2 =
 
