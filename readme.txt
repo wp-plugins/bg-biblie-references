@@ -81,6 +81,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 0.7 =
+
+* Trying to solve the conflict with the built-in script Yandex Maps
+
 = 0.6 =
 
 * Fixed a bug causing a conflict with other plugins.
@@ -111,6 +115,12 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.7 =
+
+If a script  is integrated in the content , the conflict may appear collaboration. 
+In the case with Yandex Maps conflict disappears when to start our script immediately after the output of the content on display.
+I'm afraid that is incomplete solution, and in other cases the conflict may emerge. :(
 
 = 0.6 =
 
