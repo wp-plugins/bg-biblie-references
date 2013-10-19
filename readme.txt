@@ -81,13 +81,17 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 0.8 =
+
+* Parsing algorithm of references was rewrite in PHP
+
 = 0.7 =
 
 * Trying to solve the conflict with the built-in script Yandex Maps
 
 = 0.6 =
 
-* Fixed a bug causing a conflict with other plugins.
+* Fixed a bug causing a conflict with other plugins
 
 = 0.5 =
 
@@ -115,6 +119,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.8 =
+
+The problem of using internal script in content is solved radically. Parsing algorithm of references was rewrite in PHP. Highly recommended upgrade.
 
 = 0.7 =
 
