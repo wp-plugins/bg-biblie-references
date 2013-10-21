@@ -85,6 +85,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 0.10 =
+
+* Fixed minor bugs in i18n
+
 = 0.9 =
 
 * Added Plugin's options
@@ -127,6 +131,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.10 =
+
+* Fixed minor bugs in i18n
 
 = 0.9 =
 
