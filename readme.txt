@@ -39,7 +39,8 @@ Russian:
 При указании номера главы (сразу после названия книги) можно использовать запятую вместо двоеточия. 
 Пробелы игнорируются.
 
-
+В настройках плагина Вы можете выбрать языки, на которых будет отображаться текст Библии: церковно-слявянский, русский, греческий, латинский и иврит.
+Для церковно-словянского языка можно также выбрать шрифт: церковно-слявянский шрифт, русские буквы ("старый" стиль) или HIP-стандарт.
 
 English: 
 
@@ -57,6 +58,9 @@ The plugin handles the references with the format:
 You can specify the reference in brackets and without a point after the title of the book. 
 If you specify a chapter (after the title of the book), you can use comma instead of colon.
 Spaces are ignored.
+
+In the plugin settings you can select the languages ​​in which the text will be displayed Bible: Church Slavic, Russian, Greek, Latin and Hebrew.
+For the Church Slavonic language, you can also select a font: Church Slavic font, Russian letters (the "old" style) or HIP-standard.
 
 == Installation ==
 
@@ -80,6 +84,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 2. Page of Bible verses
 
 == Changelog ==
+
+= 0.9 =
+
+* Added Plugin's options
 
 = 0.8 =
 
@@ -119,6 +127,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.9 =
+
+* Added Plugin's options.
 
 = 0.8 =
 
