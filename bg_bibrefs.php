@@ -238,7 +238,7 @@ function bg_bibfers_get_url($parts) {
 	$chapter = preg_replace("/—|–/u", '-', $chapter);					// Замена разных вариантов тире на обычный
 	preg_match("/[\\:\\,\\-]/u", $chapter, $matches);
 	if (strcasecmp($matches[0], ',') == 0) {
-		$chapter = str_replace(",", ':', $chapter);				// Первое число всегда номер главы. Если глава отделена запятой, заменяем ее на двоеточие.
+		$chapter = preg_replace("/\,/u", ':', $chapter, 1);				// Первое число всегда номер главы. Если глава отделена запятой, заменяем ее на двоеточие.
 	}
 	$ref = $title .".". $chapter;
 	
