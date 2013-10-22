@@ -41,6 +41,8 @@ Russian:
 
 В настройках плагина Вы можете выбрать языки, на которых будет отображаться текст Библии: церковно-славянский, русский, греческий, латинский и иврит.
 Для церковно-славянского языка можно также выбрать шрифт: церковно-славянский шрифт, русские буквы ("старый" стиль) или HIP-стандарт.
+Вы также можете указать, где открывать страницу с текстом Библии - в новом или текущем окне.
+Для настройки вида ссылок используйте класс bg_bibrefs. Вы можете изменить имя класса в настройках.
 
 English: 
 
@@ -61,6 +63,8 @@ Spaces are ignored.
 
 In the plugin settings you can select the languages ​​in which the text will be displayed Bible: Church Slavic, Russian, Greek, Latin and Hebrew.
 For the Church Slavonic language, you can also select a font: Church Slavic font, Russian letters (the "old" style) or HIP-standard.
+You can also specify where to open a page with the Bible text  - in new or current window.
+To customize the appearance of reference  links, use class bg_bibrefs. You can change the class name in the settings.
 
 == Installation ==
 
@@ -84,6 +88,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 2. Page of Bible verses
 
 == Changelog ==
+
+= 0.11 =
+
+* Added new options
 
 = 0.10 =
 
@@ -131,6 +139,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.11 =
+
+* Added new options: choose target to open Bible page and links class name.
 
 = 0.10 =
 
