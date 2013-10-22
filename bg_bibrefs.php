@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-    Version: 0.10
+    Version: 0.11
     Author URI: http://bogaiskov.ru 
 */
 
@@ -220,11 +220,16 @@ function bg_bibfers_get_url($parts) {
 		
 // http://azbyka.ru/biblia/?Lk.4:25-5:13,6:1-13&crgli&rus&num=cr 
 	$opt = "";
+	bg_bibrefs_options_ini (); 			// Параметры по умолчанию
 	$c_lang_val = get_option( 'bg_bibfers_c_lang' );
     $r_lang_val = get_option( 'bg_bibfers_r_lang' );
     $g_lang_val = get_option( 'bg_bibfers_g_lang' );
     $l_lang_val = get_option( 'bg_bibfers_l_lang' );
     $i_lang_val = get_option( 'bg_bibfers_i_lang' );
+    $target_val = get_option( 'bg_bibfers_target' );
+    $class_val = get_option( 'bg_bibfers_class' );
+	if ($class_val == "") $class_val = 'bg_bibfers';
+
 	$lang_val = $c_lang_val.$r_lang_val.$g_lang_val.$l_lang_val.$i_lang_val;
 	$font_val = get_option( 'bg_bibfers_c_font' );
 	if ($lang_val) $opt = "&".$lang_val;
@@ -252,7 +257,7 @@ function bg_bibfers_get_url($parts) {
 				}
 			}
 			$fullurl = $mainaddr.$url[$i*2];
-			return "href='".str_replace($title, $fullurl, $ref).$opt."' title='".$title_book."\nгл. ".$chapter. "' "; 
+			return "href='".str_replace($title, $fullurl, $ref).$opt."' class='".$class_val."' title='".$title_book."\nгл. ".$chapter. "' target='".$target_val."'"; 
 		}
 	}
 
@@ -273,7 +278,7 @@ function bg_bibfers_bible_proc($txt) {
 			if ($cn > 0) {
 				$addr = bg_bibfers_get_url($mt);
 				if (strcasecmp($addr, "#") != 0) {
-					$newmt = "<a " .$addr. "target='_blank'>" .$matches[0][$i]. "</a>";
+					$newmt = "<a " .$addr. ">" .$matches[0][$i]. "</a>";
 					$txt = str_replace($matches[0][$i], $newmt, $txt);
 				}			
 			}
@@ -291,7 +296,7 @@ if ( !defined('ABSPATH') ) { 							// Запрет прямого запуск�
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 	
-define('BG_BIBREFS_URL',     dirname(__FILE__));
+define('BG_BIBREFS_URL', dirname( plugin_basename( __FILE__ )));
 
 // Загрузка интернационализации
 load_plugin_textdomain( 'bg_bibfers', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -315,6 +320,17 @@ function bg_bibfers_add_pages() {
     // Добавим новое подменю в раздел Параметры 
     add_options_page( __('Bible References', 'bg_bibfers' ), __('Bible References', 'bg_bibfers' ), 8, __FILE__, 'bg_bibfers_options_page');
 }	
+// Задание параметров по умолчанию
+function bg_bibrefs_options_ini () {
+	add_option('bg_bibfers_c_lang', "c");
+	add_option('bg_bibfers_r_lang', "r");
+	add_option('bg_bibfers_g_lang');
+	add_option('bg_bibfers_l_lang');
+	add_option('bg_bibfers_i_lang');
+	add_option('bg_bibfers_c_font', "ucs");
+	add_option('bg_bibfers_target', "_blank");
+	add_option('bg_bibfers_class', "bg_bibfers");
+}
 
 // Регистрируем крючок на удаление плагина
 if (function_exists('register_uninstall_hook')) {
@@ -329,6 +345,9 @@ function bg_bibfers_deinstall() {
 	delete_option('bg_bibfers_l_lang');
 	delete_option('bg_bibfers_i_lang');
 	delete_option('bg_bibfers_c_font');
+	delete_option('bg_bibfers_target');
+	delete_option('bg_bibfers_class');
+
 	delete_option('bg_bibfers_submit_hidden');
 }
 
@@ -348,16 +367,13 @@ function bg_bibfers_options_page() {
     $i_lang_name = 'bg_bibfers_i_lang';
 	
     $c_font_name = 'bg_bibfers_c_font';
+    $target_window = 'bg_bibfers_target';
+    $links_class = 'bg_bibfers_class';
+
     $hidden_field_name = 'bg_bibfers_submit_hidden';
 	
-	add_option($name, $value, $deprecated, $autoload);
-	add_option( $c_lang_name, "c" );
-	add_option( $r_lang_name, "r" );
-	add_option( $g_lang_name );
-	add_option( $l_lang_name );
-	add_option( $i_lang_name );
-	add_option( $c_font_name, "ucs" );
-  
+	bg_bibrefs_options_ini (); 			// Параметры по умолчанию
+	
     // Читаем существующие значения опций из базы данных
     $c_lang_val = get_option( $c_lang_name );
     $r_lang_val = get_option( $r_lang_name );
@@ -366,6 +382,8 @@ function bg_bibfers_options_page() {
     $i_lang_val = get_option( $i_lang_name );
 
     $font_val = get_option( $c_font_name );
+    $target_val = get_option( $target_window );
+    $class_val = get_option( $links_class );
 	
 // Проверяем, отправил ли пользователь нам некоторую информацию
 // Если "Да", в это скрытое поле будет установлено значение 'Y'
@@ -390,6 +408,12 @@ function bg_bibfers_options_page() {
 		$font_val = $_POST[$c_font_name];
 		update_option( $c_font_name, $font_val );
 
+		$target_val = $_POST[$target_window];
+		update_option( $target_window, $target_val );
+
+		$class_val = $_POST[$links_class];
+		update_option( $links_class, $class_val );
+
         // Вывести сообщение об обновлении параметров на экран
 
 ?>  
@@ -409,18 +433,27 @@ function bg_bibfers_options_page() {
     // форма опций
     
     ?>
-
+<table width="100%">
+<tr><td valign="top">
+<!-- Форма настроек -->
 <form name="form1" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+
+<table class="form-table">
+
+<tr valign="top">
+<th scope="row"><?php _e('Display text of the Bible in languages:', 'bg_bibfers' ); ?></th>
+<td>
 <input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
-<h3><?php _e('Display text of the Bible in languages:', 'bg_bibfers' ); ?></h3>
-<p>
+
 <input type="checkbox" id="c_lang" name="<?php echo $c_lang_name ?>" <?php if($c_lang_val=="c") echo "checked" ?> value="c" onclick='c_lang_checked();'> <?php _e('Church Slavic', 'bg_bibfers' ); ?><br />
 <input type="checkbox" id="r_lang" name="<?php echo $r_lang_name ?>" <?php if($r_lang_val=="r") echo "checked" ?>  value="r"> <?php _e('Russian', 'bg_bibfers' ); ?><br />
 <input type="checkbox" id="g_lang" name="<?php echo $g_lang_name ?>" <?php if($g_lang_val=="g") echo "checked" ?>  value="g"> <?php _e('Greek', 'bg_bibfers' ); ?><br />
 <input type="checkbox" id="l_lang" name="<?php echo $l_lang_name ?>" <?php if($l_lang_val=="l") echo "checked" ?>  value="l"> <?php _e('Latin', 'bg_bibfers' ); ?><br />
 <input type="checkbox" id="i_lang" name="<?php echo $i_lang_name ?>" <?php if($i_lang_val=="i") echo "checked" ?>  value="i"> <?php _e('Hebrew', 'bg_bibfers' ); ?><br />
-</p><hr />
-<h3><?php _e('Font for Church Slavonic text', 'bg_bibfers' ); ?></h3>
+</td></tr>
+<tr valign="top">
+<th scope="row"><?php _e('Font for Church Slavonic text', 'bg_bibfers' ); ?></th>
+<td>
 <input type="radio" id="ucs" name="<?php echo $c_font_name ?>" <?php if($font_val=="ucs") echo "checked" ?> value="ucs"> <?php _e('Church Slavic font', 'bg_bibfers' ); ?><br />
 <input type="radio" id="rus" name="<?php echo $c_font_name ?>" <?php if($font_val=="rus") echo "checked" ?> value="rus"> <?php _e('Russian font ("Old" style)', 'bg_bibfers' ); ?><br />
 <input type="radio" id="hip" name="<?php echo $c_font_name ?>" <?php if($font_val=="hip") echo "checked" ?> value="hip"> <?php _e('HIP-standard', 'bg_bibfers' ); ?><br />
@@ -434,15 +467,95 @@ function c_lang_checked() {
 }
 c_lang_checked();
 </script>
-
+</td></tr>
+<tr valign="top">
+<th scope="row"><?php _e('Open page with Bible text', 'bg_bibfers' ); ?></th>
+<td>
+<input type="radio" id="blank_window" name="<?php echo $target_window ?>" <?php if($target_val=="_blank") echo "checked" ?> value="_blank"> <?php _e('in new window', 'bg_bibfers' ); ?><br />
+<input type="radio" id="self_window" name="<?php echo $target_window ?>" <?php if($target_val=="_self") echo "checked" ?> value="_self"> <?php _e('in current window', 'bg_bibfers' ); ?><br />
+</td></tr>
+<tr valign="top">
+<th scope="row"><?php _e('Reference links class', 'bg_bibfers' ); ?></th>
+<td>
+<input type="text" id="links_class" name="<?php echo $links_class ?>" size="20" value="<?php echo $class_val ?>"><br />
+</td></tr>
+<tr valign="top">
+<td>
 <p class="submit">
 <input type="submit" name="Submit" value="<?php _e('Update Options', 'bg_bibfers' ) ?>" />
 </p>
-
+</td></tr></table>
 </form>
 </div>
+
+
+<!-- Информация о плагине -->
+</td><td width="25em">
+<style>
+.bg_bibfers_info_box {
+	padding: 1.5em;
+	background-color: #FAFAFA;
+	border: 1px solid #ddd;
+	margin: 1em 0 1em 0;
+	float: right;
+	width: 22em;
+}
+	.bg_bibfers_info_box h3:first-of-type {
+		margin-top: 0;
+	}
+
+	.bg_bibfers_author {
+		font-style: italic;
+	}
+
+	.bg_bibfers_info_box p {
+		margin: 0 0 .5em 0;
+	}
+
+	p.bg_bibfers_gravatar {
+		float: right;
+		margin: 0 0 1em 1em;
+	}
+
+	.bg_bibfers_info_box ul {
+		list-style-type: disc;
+		margin-left: 20px;
+	}
+
+	p.bg_bibfers_close {
+		text-align: right;
+		font-style: italic;
+		font-size: 1.5em;
+		color: darkblue;
+		margin-top: 1.5em;
+		margin-bottom: 0;
+	}
+</style>
+
+<div class="bg_bibfers_info_box">
+
+	<h3><?php _e('Thanks for using Bg Biblie References', 'bg_bibfers') ?></h3>
+	<p class="bg_bibfers_gravatar"><a href="http://bogaiskov.ru" target="_blank"><?php echo get_avatar("vadim.bogaiskov@gmail.com", '64'); ?></a></p>
+	<p><?php _e('Dear brothers and sisters!<br />Thank you for using my plugin!<br />I hope it is useful for you.', 'bg_bibfers') ?></p>
+	<p class="bg_bibfers_author"><a href="http://bogaiskov.ru" target="_blank"><?php _e('Vadim Bogaiskov', 'bg_bibfers') ?></a></p>
+
+	<h3><?php _e('I like this plugin<br>– how can I thank you?', 'bg_bibfers') ?></h3>
+	<p><?php _e('There are several ways for you to say thanks:', 'bg_bibfers') ?></p>
+	<ul>
+		<li><?php printf(__('<a href="%1$s" target="_blank">Give a donation</a>  for the construction of the church of Sts. Peter and Fevronia in Marino', 'bg_bibfers'), "http://hpf.ru.com/donate/") ?></li>
+		<li><?php printf(__('<a href="%1$s" target="_blank">Give it a nice review</a> over at the WordPress Plugin Directory', 'bg_bibfers'), "http://wordpress.org/support/view/plugin-reviews/bg-biblie-references") ?></li>
+		<li><?php printf(__('Share infotmation or make a nice blog post about the plugin', 'bg_bibfers')) ?></li>
+	</ul>
+	<div class="share42init" align="center" data-url="http://bogaiskov.ru/bg_bibfers/" data-title="<?php _e('Bg Bible References really cool plugin for Orthodox WordPress sites', 'bg_bibfers') ?>"></div>
+	<script type="text/javascript" src="<?php printf( plugins_url( 'share42/share42.js' , plugin_basename(__FILE__) ) ) ?>"></script>
+
+	<h3><?php _e('Support', 'bg_bibfers') ?></h3>
+	<p><?php printf(__('Please see the <a href="%1$s" target="_blank">support forum</a> or my <a href="%2$s" target="_blank">personal site</a> for help.', 'bg_bibfers'), "http://wordpress.org/support/plugin/bg-biblie-references", "http://bogaiskov.ru/bg_bibfers/") ?></p>
+	
+	<p class="bg_bibfers_close"><?php _e("God protect you!", 'bg_bibfers') ?></p>
+</div>
+</td></tr></table>
 <?php 
 
 } 
-
 ?>
