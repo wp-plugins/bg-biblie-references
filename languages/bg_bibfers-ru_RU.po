@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bg_bibfers\n"
-"POT-Creation-Date: 2013-10-21 21:04+0400\n"
-"PO-Revision-Date: 2013-10-21 22:40+0400\n"
+"POT-Creation-Date: 2013-10-23 00:35+0400\n"
+"PO-Revision-Date: 2013-10-23 00:37+0400\n"
 "Last-Translator: Вадим <vadim.bogaiskov@gmail.com>\n"
 "Language-Team: Vadim Bogaiskov <vadim.bogaiskov@gmail.com>\n"
 "Language: ru\n"
@@ -19,64 +19,175 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: bg_bibrefs.php:315 ../bg_bibrefs2/bg_bibrefs.php:315
+#: bg_bibrefs.php:321 ../bg-biblie-references/bg_bibrefs.php:321
+#: ../bg_bibrefs2/bg_bibrefs.php:321
 msgid "Bible References"
 msgstr "Ссылки на Библию"
 
-#: bg_bibrefs.php:381 options/bg_bibfers_options.php:27
-#: ../bg_bibrefs2/bg_bibrefs.php:381
-#: ../bg_bibrefs2/options/bg_bibfers_options.php:27
+#: bg_bibrefs.php:420 ../bg-biblie-references/bg_bibrefs.php:420
+#: ../bg_bibrefs2/bg_bibrefs.php:420
 msgid "Options saved."
 msgstr "Настройки сохранены."
 
-#: bg_bibrefs.php:392 options/bg_bibfers_options.php:38
-#: ../bg_bibrefs2/bg_bibrefs.php:392
-#: ../bg_bibrefs2/options/bg_bibfers_options.php:38
+#: bg_bibrefs.php:431 ../bg-biblie-references/bg_bibrefs.php:431
+#: ../bg_bibrefs2/bg_bibrefs.php:431
 msgid "Bg Bible References Plugin Options"
 msgstr "Настройки плагина Ссылки на Библию"
 
-#: bg_bibrefs.php:400 ../bg_bibrefs2/bg_bibrefs.php:400
+#: bg_bibrefs.php:444 ../bg-biblie-references/bg_bibrefs.php:444
+#: ../bg_bibrefs2/bg_bibrefs.php:444
 msgid "Display text of the Bible in languages:"
 msgstr "Отображать текст Библии на языках:"
 
-#: bg_bibrefs.php:402 ../bg_bibrefs2/bg_bibrefs.php:402
+#: bg_bibrefs.php:448 ../bg-biblie-references/bg_bibrefs.php:448
+#: ../bg_bibrefs2/bg_bibrefs.php:448
 msgid "Church Slavic"
 msgstr "Церковно-славянский"
 
-#: bg_bibrefs.php:403 ../bg_bibrefs2/bg_bibrefs.php:403
+#: bg_bibrefs.php:449 ../bg-biblie-references/bg_bibrefs.php:449
+#: ../bg_bibrefs2/bg_bibrefs.php:449
 msgid "Russian"
 msgstr "Русский"
 
-#: bg_bibrefs.php:404 ../bg_bibrefs2/bg_bibrefs.php:404
+#: bg_bibrefs.php:450 ../bg-biblie-references/bg_bibrefs.php:450
+#: ../bg_bibrefs2/bg_bibrefs.php:450
 msgid "Greek"
 msgstr "Греческий"
 
-#: bg_bibrefs.php:405 ../bg_bibrefs2/bg_bibrefs.php:405
+#: bg_bibrefs.php:451 ../bg-biblie-references/bg_bibrefs.php:451
+#: ../bg_bibrefs2/bg_bibrefs.php:451
 msgid "Latin"
 msgstr "Латинский"
 
-#: bg_bibrefs.php:406 ../bg_bibrefs2/bg_bibrefs.php:406
+#: bg_bibrefs.php:452 ../bg-biblie-references/bg_bibrefs.php:452
+#: ../bg_bibrefs2/bg_bibrefs.php:452
 msgid "Hebrew"
 msgstr "Иврит"
 
-#: bg_bibrefs.php:408 ../bg_bibrefs2/bg_bibrefs.php:408
+#: bg_bibrefs.php:455 ../bg-biblie-references/bg_bibrefs.php:455
+#: ../bg_bibrefs2/bg_bibrefs.php:455
 msgid "Font for Church Slavonic text"
 msgstr "Шрифт для церковно-славянского текста"
 
-#: bg_bibrefs.php:409 ../bg_bibrefs2/bg_bibrefs.php:409
+#: bg_bibrefs.php:457 ../bg-biblie-references/bg_bibrefs.php:457
+#: ../bg_bibrefs2/bg_bibrefs.php:457
 msgid "Church Slavic font"
 msgstr "Церковно-славянский шрифт"
 
-#: bg_bibrefs.php:410 ../bg_bibrefs2/bg_bibrefs.php:410
+#: bg_bibrefs.php:458 ../bg-biblie-references/bg_bibrefs.php:458
+#: ../bg_bibrefs2/bg_bibrefs.php:458
 msgid "Russian font (\"Old\" style)"
 msgstr "Русские буквы (\"Старый\" стиль)"
 
-#: bg_bibrefs.php:411 ../bg_bibrefs2/bg_bibrefs.php:411
+#: bg_bibrefs.php:459 ../bg-biblie-references/bg_bibrefs.php:459
+#: ../bg_bibrefs2/bg_bibrefs.php:459
 msgid "HIP-standard"
 msgstr "HIP-стандарт"
 
-#: bg_bibrefs.php:424 options/bg_bibfers_options.php:70
-#: ../bg_bibrefs2/bg_bibrefs.php:424
-#: ../bg_bibrefs2/options/bg_bibfers_options.php:70
+#: bg_bibrefs.php:472 ../bg-biblie-references/bg_bibrefs.php:472
+#: ../bg_bibrefs2/bg_bibrefs.php:472
+msgid "Open page with Bible text"
+msgstr "Открыть страницу с текстом Библии"
+
+#: bg_bibrefs.php:474 ../bg-biblie-references/bg_bibrefs.php:474
+#: ../bg_bibrefs2/bg_bibrefs.php:474
+msgid "in new window"
+msgstr "в новом окне"
+
+#: bg_bibrefs.php:475 ../bg-biblie-references/bg_bibrefs.php:475
+#: ../bg_bibrefs2/bg_bibrefs.php:475
+msgid "in current window"
+msgstr "в текущем окне"
+
+#: bg_bibrefs.php:478 ../bg-biblie-references/bg_bibrefs.php:478
+#: ../bg_bibrefs2/bg_bibrefs.php:478
+msgid "Reference links class"
+msgstr "Класс для ссылок на Библию"
+
+#: bg_bibrefs.php:485 ../bg-biblie-references/bg_bibrefs.php:485
+#: ../bg_bibrefs2/bg_bibrefs.php:485
 msgid "Update Options"
 msgstr "Обновить настройки"
+
+#: bg_bibrefs.php:537 ../bg_bibrefs2/bg_bibrefs.php:537
+msgid "Thanks for using my plugin"
+msgstr "Спасибо за использование моего плагина"
+
+#: bg_bibrefs.php:539 ../bg-biblie-references/bg_bibrefs.php:539
+#: ../bg_bibrefs2/bg_bibrefs.php:539
+msgid ""
+"Dear brothers and sisters!<br />Thank you for using my plugin!<br />I hope "
+"it is useful for you."
+msgstr ""
+"Дорогие братия и сестры!<br />Спасибо за использование моего плагина !<br /"
+">Я надеюсь, что он оказался Вам полезен."
+
+#: bg_bibrefs.php:540 ../bg-biblie-references/bg_bibrefs.php:540
+#: ../bg_bibrefs2/bg_bibrefs.php:540
+msgid "Vadim Bogaiskov"
+msgstr "Вадим Богайсков"
+
+#: bg_bibrefs.php:542 ../bg-biblie-references/bg_bibrefs.php:542
+#: ../bg_bibrefs2/bg_bibrefs.php:542
+msgid "I like this plugin<br>– how can I thank you?"
+msgstr "Мне нравится этот плагин<br> - как я могу отблагодарить Вас?"
+
+#: bg_bibrefs.php:543 ../bg-biblie-references/bg_bibrefs.php:543
+#: ../bg_bibrefs2/bg_bibrefs.php:543
+msgid "There are several ways for you to say thanks:"
+msgstr "Есть несколько возможностей, чтобы сказать спасибо:"
+
+#: bg_bibrefs.php:545 ../bg-biblie-references/bg_bibrefs.php:545
+#: ../bg_bibrefs2/bg_bibrefs.php:545
+#, php-format
+msgid ""
+"<a href=\"%1$s\" target=\"_blank\">Give a donation</a>  for the construction "
+"of the church of Sts. Peter and Fevronia in Marino"
+msgstr ""
+"<a href=\"%1$s\" target=\"_blank\">Сделать пожертвование</a> на "
+"строительство храма свв. Петра и Февронии в Марьино"
+
+#: bg_bibrefs.php:546 ../bg-biblie-references/bg_bibrefs.php:546
+#: ../bg_bibrefs2/bg_bibrefs.php:546
+#, php-format
+msgid ""
+"<a href=\"%1$s\" target=\"_blank\">Give it a nice review</a> over at the "
+"WordPress Plugin Directory"
+msgstr ""
+"<a href=\"%1$s\" target=\"_blank\">Дать высокую оценку</a> в каталоге "
+"плагинов  WordPress"
+
+#: bg_bibrefs.php:547 ../bg-biblie-references/bg_bibrefs.php:547
+#: ../bg_bibrefs2/bg_bibrefs.php:547
+msgid "Share infotmation or make a nice blog post about the plugin"
+msgstr "Распространить информацию или написать заметку в блог о плагине"
+
+#: bg_bibrefs.php:549 ../bg-biblie-references/bg_bibrefs.php:549
+#: ../bg_bibrefs2/bg_bibrefs.php:549
+msgid "Bg Bible References really cool plugin for Orthodox WordPress sites"
+msgstr ""
+"Bg Bible References - отличный плагин для православных сайтов на  WordPress"
+
+#: bg_bibrefs.php:552 ../bg-biblie-references/bg_bibrefs.php:552
+#: ../bg_bibrefs2/bg_bibrefs.php:552
+msgid "Support"
+msgstr "Поддержка"
+
+#: bg_bibrefs.php:553 ../bg-biblie-references/bg_bibrefs.php:553
+#: ../bg_bibrefs2/bg_bibrefs.php:553
+#, php-format
+msgid ""
+"Please see the <a href=\"%1$s\" target=\"_blank\">support forum</a> or my <a "
+"href=\"%2$s\" target=\"_blank\">personal site</a> for help."
+msgstr ""
+"См. <a href=\"%1$s\" target=\"_blank\">форум поддержки</a> или мой <a href="
+"\"%2$s\" target=\"_blank\">персональный сайт</a>для получения справки."
+
+#: bg_bibrefs.php:555 ../bg-biblie-references/bg_bibrefs.php:555
+#: ../bg_bibrefs2/bg_bibrefs.php:555
+msgid "God protect you!"
+msgstr "Храни вас Господи!"
+
+#: ../bg-biblie-references/bg_bibrefs.php:537
+msgid "Thanks for using Bg Biblie References"
+msgstr "Спасибо за использование плагина Ссылки на Библию"
