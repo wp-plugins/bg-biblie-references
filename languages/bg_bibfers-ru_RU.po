@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg_bibfers\n"
 "POT-Creation-Date: 2013-10-23 00:35+0400\n"
-"PO-Revision-Date: 2013-10-23 00:37+0400\n"
+"PO-Revision-Date: 2013-10-23 08:22+0400\n"
 "Last-Translator: Вадим <vadim.bogaiskov@gmail.com>\n"
 "Language-Team: Vadim Bogaiskov <vadim.bogaiskov@gmail.com>\n"
 "Language: ru\n"
@@ -119,8 +119,8 @@ msgid ""
 "Dear brothers and sisters!<br />Thank you for using my plugin!<br />I hope "
 "it is useful for you."
 msgstr ""
-"Дорогие братия и сестры!<br />Спасибо за использование моего плагина !<br /"
-">Я надеюсь, что он оказался Вам полезен."
+"Дорогие братия и сестры!<br />Спасибо за использование моего плагина ! Я "
+"надеюсь, что он оказался Вам полезен."
 
 #: bg_bibrefs.php:540 ../bg-biblie-references/bg_bibrefs.php:540
 #: ../bg_bibrefs2/bg_bibrefs.php:540
@@ -181,7 +181,7 @@ msgid ""
 "href=\"%2$s\" target=\"_blank\">personal site</a> for help."
 msgstr ""
 "См. <a href=\"%1$s\" target=\"_blank\">форум поддержки</a> или мой <a href="
-"\"%2$s\" target=\"_blank\">персональный сайт</a>для получения справки."
+"\"%2$s\" target=\"_blank\">персональный сайт</a> для получения справки."
 
 #: bg_bibrefs.php:555 ../bg-biblie-references/bg_bibrefs.php:555
 #: ../bg_bibrefs2/bg_bibrefs.php:555
