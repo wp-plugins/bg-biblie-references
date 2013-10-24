@@ -89,6 +89,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 0.12 =
+
+* Plugin internationalization (i18n).
+
 = 0.11 =
 
 * Added new options
@@ -140,6 +144,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Upgrade Notice ==
 
+= 0.12 =
+
+* Plugin internationalization (i18n). Added possibility translate the plugin to your native language.
+
 = 0.11 =
 
 * Added new options: choose target to open Bible page and links class name.
@@ -182,6 +190,18 @@ I'm afraid that is incomplete solution, and in other cases the conflict may emer
 
 * Enhance feature. Fixed of errors detected. Upgrade immediately.
 
+
+== Notes for Translators ==
+
+You can translate this plugin using the program PoEdit (http://www.poedit.net/). 
+More in detail about translation WordPress plugins, see "Translating WordPress" (http://codex.wordpress.org/Translating_WordPress).
+Note on the translation abbreviations of the books of the Bible:
+* You can specify multiple alternatives of the abbreviations. To do this, separate them using the symbol |, for example: Mt|Mtw|Matth (Gospel of Matthew).
+* If the abbreviation include the punctuation marks (point, comma, dash, etc.) escape them using a double slash (Let.Jer => Let\\.Jer).
+* Abbreviation should not contain spaces.
+* Note that in the English language abbreviation and title of the books "Jab" and "Joel" are the same. Translate them according to the context (an abbreviation first, then the title).
+
+Send me your PO-files. I will insert them in plugin in next version.
 
 == License ==
 
