@@ -200,7 +200,7 @@ Note on the translation abbreviations of the books of the Bible:
 
 * You can specify multiple alternatives of the abbreviations. To do this, separate them using the symbol |, for example: Mt|Mtw|Matth (Gospel of Matthew).
 
-* If the abbreviation include the punctuation marks (point, comma, dash, etc.) escape them using a double slash (Let.Jer => Let\\.Jer).
+* If the abbreviation include the punctuation marks (point, comma, dash, etc.) escape them using a double slash (Let.Jer => Let\\\\.Jer).
 
 * Abbreviation should not contain spaces.
 
