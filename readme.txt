@@ -25,7 +25,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Russian:
 
 Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт Православной энциклопедии "Азбука веры" (http://azbyka.ru/biblia). 
-Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. Названия книг только по-русски. Не требуется никаких настроек. 
+Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. Не требуется никаких настроек. 
 
 Плагин обрабатывает ссылки следующего формата:
 
@@ -47,7 +47,7 @@ Russian:
 English: 
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
-The Bible is presented in Church, Russian, Greek, Hebrew and Latin. Titles of books in Russian only. Does not require any adjustments. 
+The Bible is presented in Church, Russian, Greek, Hebrew and Latin. Does not require any adjustments. 
 
 The plugin handles the references with the format:
 
@@ -200,7 +200,8 @@ Note on the translation abbreviations of the books of the Bible:
 
 * You can specify multiple alternatives of the abbreviations. To do this, separate them using the symbol |, for example: Mt|Mtw|Matth (Gospel of Matthew).
 
-* If the abbreviation include the punctuation marks (point, comma, dash, etc.) escape them using a double slash (Let.Jer => Let\\\\.Jer).
+* If the abbreviation include the punctuation marks (point, comma, dash, etc.) escape them using a double slash (Let.Jer => Let\\\\.Jer). 
+There are rules for PHP regular expressions (http://en.wikipedia.org/wiki/Regular_expression).
 
 * Abbreviation should not contain spaces.
 
