@@ -193,7 +193,7 @@ I'm afraid that is incomplete solution, and in other cases the conflict may emer
 
 == Notes for Translators ==
 
-You can translate this plugin using the program PoEdit (http://www.poedit.net/). 
+You can translate this plugin using POT-file with program PoEdit (http://www.poedit.net/). 
 More in detail about translation WordPress plugins, see "Translating WordPress" (http://codex.wordpress.org/Translating_WordPress).
 
 Note on the translation abbreviations of the books of the Bible:
