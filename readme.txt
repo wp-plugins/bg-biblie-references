@@ -4,7 +4,7 @@ Contributors: Vadim Bogaiskov
 
 Donate link: http://bogaiskov.ru/about-me/donate/
 
-Tags: bible, scripture, references, jesus christ, holy bible, holy spirit, orthodox, Библия, православие, христианство, Священное Писание, Новый Завет, Ветхий Завет
+Tags: bible, orthodoxy, Christianity, Библия, православие, христианство, Священное Писание, Завет, ορθοδοξία, χριστιανισμός, Αγία Γραφή
 
 Requires at least: 3.0.1
 
@@ -25,7 +25,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Russian:
 
 Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт Православной энциклопедии "Азбука веры" (http://azbyka.ru/biblia). 
-Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. Не требуется никаких настроек. 
+Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. 
 
 Плагин обрабатывает ссылки следующего формата:
 
@@ -47,7 +47,7 @@ Russian:
 English: 
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
-The Bible is presented in Church, Russian, Greek, Hebrew and Latin. Does not require any adjustments. 
+The Bible is presented in Church, Russian, Greek, Hebrew and Latin. 
 
 The plugin handles the references with the format:
 
@@ -88,6 +88,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 2. Page of Bible verses
 
 == Changelog ==
+
+= 1.0.0 =
+
+* The first stable version.
 
 = 0.12 =
 
@@ -144,6 +148,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Upgrade Notice ==
 
+= 1.0.0 =
+
+* The first stable version.
+
 = 0.12 =
 
 * Plugin internationalization (i18n). Added possibility translate the plugin to your native language.
@@ -193,7 +201,7 @@ I'm afraid that is incomplete solution, and in other cases the conflict may emer
 
 == Notes for Translators ==
 
-You can translate this plugin using POT-file with program PoEdit (http://www.poedit.net/). 
+You can translate this plugin using POT-file in languages folder with program PoEdit (http://www.poedit.net/). 
 More in detail about translation WordPress plugins, see "Translating WordPress" (http://codex.wordpress.org/Translating_WordPress).
 
 Note on the translation abbreviations of the books of the Bible:
