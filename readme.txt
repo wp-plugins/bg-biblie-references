@@ -89,6 +89,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Fixed parsing bug.
+
 = 1.0.0 =
 
 * The first stable version.
@@ -147,6 +151,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+
+* Fixed parsing bug.
 
 = 1.0.0 =
 

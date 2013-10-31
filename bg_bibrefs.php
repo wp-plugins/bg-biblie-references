@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-    Version: 1.0.0
+    Version: 1.0.1
     Author URI: http://bogaiskov.ru 
 */
 
@@ -401,19 +401,20 @@ function bg_bibfers_get_url($parts) {
 	for ($i=0; $i < $cn_url; $i++) {
 		$regvar = "/".$url[$i*2+1]."|".$url[$i*2]."/i";
 		preg_match_all($regvar, $title, $mts);
-
-		if (count($mts[0])) {
-//		if (strcasecmp($url[$i*2+1],  $title) == 0) {
-			$title_book = "";
-			for ($j=0; $j < $cn_book; $j++) {
-				if (strcasecmp($book[$j*2],$url[$i*2]) == 0) {
-					$title_book = $book[$j*2+1];
-					break;
+		$cnt = count($mts[0]);
+		for ($k=0; $k<$cnt; $k++) {
+			if (strcasecmp($mts[0][$k],  $title) == 0) {
+				$title_book = "";
+				for ($j=0; $j < $cn_book; $j++) {
+					if (strcasecmp($book[$j*2],$url[$i*2]) == 0) {
+						$title_book = $book[$j*2+1];
+						break;
+					}
 				}
+				$fullurl = $mainaddr.$url[$i*2];
+				// translators: ch. - is abbr. "chapter"
+				return "href='".str_replace($title, $fullurl, $ref).$opt."' class='".$class_val."' title='".$title_book."\n".(__('ch. ', 'bg_bibfers' ))." ".$chapter. "' target='".$target_val."'"; 
 			}
-			$fullurl = $mainaddr.$url[$i*2];
-			// translators: ch. - is abbr. "chapter"
-			return "href='".str_replace($title, $fullurl, $ref).$opt."' class='".$class_val."' title='".$title_book."\n".(__('ch. ', 'bg_bibfers' ))." ".$chapter. "' target='".$target_val."'"; 
 		}
 	}
 
