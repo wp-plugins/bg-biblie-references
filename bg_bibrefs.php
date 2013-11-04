@@ -51,6 +51,7 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
 	add_filter( 'the_content', 'bg_bibfers' );
 // Регистрируем крючок для добавления меню администратора
 	add_action('admin_menu', 'bg_bibfers_add_pages');
+	bg_bibrefs_options_ini ();
 // Регистрируем крючок на удаление плагина
 	if (function_exists('register_uninstall_hook')) {
 		register_uninstall_hook(__FILE__, 'bg_bibfers_deinstall');
@@ -83,7 +84,7 @@ function bg_bibrefs_options_ini () {
 	add_option('bg_bibfers_c_font', "ucs");
 	add_option('bg_bibfers_target', "_blank");
 	add_option('bg_bibfers_class', "bg_bibfers");
-	add_option('bg_bibfers_show_verses', 'on');
+	add_option('bg_bibfers_show_verses', "on");
 }
 
 // Очистка таблицы параметров при удалении плагина
