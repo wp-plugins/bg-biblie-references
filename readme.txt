@@ -44,6 +44,10 @@ Russian:
 Вы также можете указать, где открывать страницу с текстом Библии - в новом или текущем окне.
 Для настройки вида ссылок используйте класс bg_bibrefs. Вы можете изменить имя класса в настройках.
 
+В версии 2.0 при наведении курсора мыши на ссылку отображается всплывающая подсказка  содержащая стихи Библии (только на русском языке). 
+Файлы книг Библии взяты с сайта patriarchia.ru и теперь поставляется вместе с плагином. 
+При отключении этой опции вместо стихов отображается номер главы и номера стихов.
+
 English: 
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
@@ -65,6 +69,10 @@ In the plugin settings you can select the languages ​​in which the text will
 For the Church Slavonic language, you can also select a font: Church Slavic font, Russian letters (the "old" style) or HIP-standard.
 You can also specify where to open a page with the Bible text  - in new or current window.
 To customize the appearance of reference  links, use class bg_bibrefs. You can change the class name in the settings.
+
+In version 2.0, when you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
+Bible E-books are taken from the site patriarchia.ru and now comes with the plugin.
+If you disable this option, the number of the chapter and verse numbers will displayed instead of verses.
 
 == Installation ==
 
@@ -89,9 +97,9 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
-= 1.0.1 =
+= 2.0.0 =
 
-* Fixed parsing bug.
+* In version 2.0, when you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
 
 = 1.0.0 =
 
@@ -152,9 +160,9 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Upgrade Notice ==
 
-= 1.0.1 =
+= 2.0.0 =
 
-* Fixed parsing bug.
+* In version 2.0, when you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
 
 = 1.0.0 =
 
