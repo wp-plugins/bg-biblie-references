@@ -194,7 +194,7 @@ function bg_bibfers_getVerses($book, $verurl) {
 	$title_book = $bookTitle[$book];													// Полное наименование книги Библии
 	// translators: ch. - is abbr. "chapter"
 	if ($bg_verses_val != 'on') {														// Только номера глав и стихов
-		return "<b>".$title_book."</b><br>".(__('ch. ', 'bg_bibfers' ))." ".$chapter;							
+		return "<b>".$title_book."</b><br>".(__('ch. ', 'bg_bibfers' ))." ".$verurl;							
 	}	
 
 /*******************************************************************************
