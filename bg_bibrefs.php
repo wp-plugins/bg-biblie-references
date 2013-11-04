@@ -51,9 +51,7 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
 	add_filter( 'the_content', 'bg_bibfers' );
 // Регистрируем крючок для добавления меню администратора
 	add_action('admin_menu', 'bg_bibfers_add_pages');
-// Задание параметров по умолчанию
-	delete_option('g_bibfers_show_verses'); // Убрать в следующей версии (исправление ошибок)
-	bg_bibrefs_options_ini ();
+	delete_option('g_bibfers_show_verses');					// Исправление ошибки - удалить строку в следующей версии
 // Регистрируем крючок на удаление плагина
 	if (function_exists('register_uninstall_hook')) {
 		register_uninstall_hook(__FILE__, 'bg_bibfers_deinstall');
