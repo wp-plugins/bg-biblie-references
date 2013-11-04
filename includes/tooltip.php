@@ -189,7 +189,7 @@ function bg_bibfers_getVerses($book, $verurl) {
 /*******************************************************************************
    Проверяем настройки
 *******************************************************************************/  
-	$bg_verses_val = get_option( 'g_bibfers_show_verses' );	
+	$bg_verses_val = get_option( 'bg_bibfers_show_verses' );	
 	// Формируем полный текст всплывающей подсказки
 	$title_book = $bookTitle[$book];													// Полное наименование книги Библии
 	// translators: ch. - is abbr. "chapter"
