@@ -18,7 +18,7 @@ function bg_bibfers_options_page() {
     $target_window = 'bg_bibfers_target';
     $links_class = 'bg_bibfers_class';
 	
-	$bg_verses_name = 'g_bibfers_show_verses';
+	$bg_verses_name = 'bg_bibfers_show_verses';
 
     $hidden_field_name = 'bg_bibfers_submit_hidden';
 	
