@@ -50,7 +50,7 @@ function bg_bibfers_bible_proc($txt) {
 /******************************************************************************************
 	Формирование ссылки на http://azbyka.ru/biblia/
 	Используется в функции bg_bibfers_bible_proc(),
-	для работы требуется bg_bibfers_getVerses() - tooltip.php
+	для работы требуется bg_bibfers_getЕшеду() - см. ниже
 *******************************************************************************************/
 function bg_bibfers_get_url($title, $chapter) {
 	$url = array(						// Книги Священного Писания
@@ -222,6 +222,9 @@ function bg_bibfers_get_url($title, $chapter) {
 // http://azbyka.ru/biblia/?Lk.4:25-5:13,6:1-13&crgli&rus&num=cr 
 	bg_bibrefs_options_ini (); 			// Параметры по умолчанию
 	
+/*******************************************************************************
+   Проверяем настройки
+*******************************************************************************/  
 // Задание языков и шрифтов для отображения на сайте azbyka.ru
 	$opt = "";
 	$c_lang_val = get_option( 'bg_bibfers_c_lang' );
@@ -237,6 +240,7 @@ function bg_bibfers_get_url($title, $chapter) {
     $target_val = get_option( 'bg_bibfers_target' );
     $class_val = get_option( 'bg_bibfers_class' );
 	if ($class_val == "") $class_val = 'bg_bibfers';
+	$bg_verses_val = get_option( 'bg_bibfers_show_verses' );	
 	
 	$cn_url = count($url) / 2;
 	for ($i=0; $i < $cn_url; $i++) {											// Просматриваем всю таблицу соответствия сокращений наименований книг
@@ -246,11 +250,119 @@ function bg_bibfers_get_url($title, $chapter) {
 		for ($k=0; $k < $cnt; $k++) {											// Из всех вхождений находим точное соответствие указанному наименованию
 			if (strcasecmp($mts[0][$k],  $title) == 0) {						
 				$fullurl = "http://azbyka.ru/biblia/?".$url[$i*2].".". $chapter;// Полный адрес ссылки на azbyka.ru
-				$the_title = bg_bibfers_getVerses($url[$i*2], $chapter);		// Содержимое всплывающей подсказки	
-				return "<a href='".$fullurl.$opt."' class='bg_data_title ".$class_val."' target='".$target_val."'><span class='bg_data_tooltip'>".$the_title."</span>"; 
+				if ($bg_verses_val == 'on') {									// Текст  стихов
+					$the_title = bg_bibfers_getTitle($url[$i*2]);				// Только название книги 	
+					$ajax_url = plugins_url("/bible/?title=".$url[$i*2]."&chapter=".$chapter, dirname(__FILE__));
+				} else {
+				// translators: ch. - is abbr. "chapter"
+					$the_title =  bg_bibfers_getTitle($url[$i*2]).(__('ch. ', 'bg_bibfers' ))." ".$verurl;	// Название книги, номера глав и стихов						
+					$ajax_url = "";
+				}
+				return "<a href='".$fullurl.$opt."' class='bg_data_title ".$class_val."' target='".$target_val."' data-title='".$ajax_url."'><span class='bg_data_tooltip'>".$the_title."</span>"; 
 			}
 		}
 	}
 	return "";
+}
+/*******************************************************************************
+   Полное наименование к4ниги Библии
+   Используется в функции bg_bibfers_get_url()
+*******************************************************************************/  
+
+function bg_bibfers_getTitle($book) {
+	$bookTitle = array(						// Полные названия Книг Священного Писания
+		// Ветхий Завет
+		// Пятикнижие Моисея
+		'Gen' 		=>__('Genesis', 'bg_bibfers' ),							//'Книга Бытия', 
+		'Ex' 		=>__('Exodus', 'bg_bibfers' ),							//'Книга Исход', 
+		'Lev' 		=>__('Leviticus', 'bg_bibfers' ),							//'Книга Левит', 
+		'Num' 		=>__('Numbers', 'bg_bibfers' ),							//'Книга Числа', 
+		'Deut' 		=>__('Deuteronomy', 'bg_bibfers' ),						//'Второзаконие',
+		// «Пророки» (Невиим) 
+		'Nav' 		=>__('Joshua (Iesous)', 'bg_bibfers' ),					//'Книга Иисуса Навина',
+		'Judg'		=>__('Judges', 'bg_bibfers' ),							//'Книга Судей Израилевых', 
+		'Rth' 		=>__('Ruth', 'bg_bibfers' ),							//'Книга Руфь',
+		'1Sam' 		=>__('1 Samuel (1 Kingdoms)', 'bg_bibfers' ),			//'Первая книга Царств (Первая книга Самуила)', 
+		'2Sam' 		=>__('2 Samuel (2 Kingdoms)', 'bg_bibfers' ),			//'Вторая книга Царств (Вторая книга Самуила)', 
+		'1King' 	=>__('1 Kings (3 Kingdoms)', 'bg_bibfers' ),			//'Третья книга Царств (Первая книга Царей)', 
+		'2King' 	=>__('2 Kings (4 Kingdoms)', 'bg_bibfers' ),			//'Четвёртая книга Царств (Вторая книга Царей)',
+		'1Chron' 	=>__('1 Chronicles (1 Paralipomenon)', 'bg_bibfers' ),	//'Первая книга Паралипоменон (Первая книга Хроник, Первая Летопись)', 
+		'2Chron' 	=>__('2 Chronicles (2 Paralipomenon)', 'bg_bibfers' ),	//'Вторая книга Паралипоменон (Вторая книга Хроник, Вторая Летопись)', 
+		'Ezr' 		=>__('1 Esdras', 'bg_bibfers' ),						//'Книга Ездры (Первая книга Ездры)', 
+		'Nehem' 	=>__('Nehemiah (2 Esdras)', 'bg_bibfers' ),				//'Книга Неемии', 
+		'Est' 		=>__('Esther', 'bg_bibfers' ),							//'Книга Есфири',  
+		// «Писания» (Ктувим)
+		'Job' 		=>__('Job', 'bg_bibfers' ),								//'Книга Иова',
+		'Ps' 		=>__('Psalms', 'bg_bibfers' ),							//'Псалтирь', 
+		'Prov' 		=>__('Proverbs', 'bg_bibfers' ),						//'Книга Притчей Соломоновых', 
+		'Eccl' 		=>__('Ecclesiastes', 'bg_bibfers' ),					//'Книга Екклезиаста, или Проповедника', 
+		'Song' 		=>__('Song of Songs (Aisma Aismaton)', 'bg_bibfers' ),	//'Песнь песней Соломона',
+
+		'Is' 		=>__('Isaiah', 'bg_bibfers' ),							//'Книга пророка Исайи', 
+		'Jer' 		=>__('Jeremiah', 'bg_bibfers' ),						//'Книга пророка Иеремии',
+		'Lam' 		=>__('Lamentations', 'bg_bibfers' ),					//'Книга Плач Иеремии', 
+		'Ezek'	 	=>__('Ezekiel', 'bg_bibfers' ),							//'Книга пророка Иезекииля',
+		'Dan' 		=>__('Daniel', 'bg_bibfers' ),							//'Книга пророка Даниила', 
+		// Двенадцать малых пророков 
+		'Hos' 		=>__('Hosea', 'bg_bibfers' ),							//'Книга пророка Осии', 
+		'Joel'	 	=>__('Joel', 'bg_bibfers' ),							//'Книга пророка Иоиля',
+		'Am' 		=>__('Amos', 'bg_bibfers' ),							//'Книга пророка Амоса', 
+		'Avd' 		=>__('Obadiah', 'bg_bibfers' ),							//'Книга пророка Авдия', 
+		'Jona' 		=>__('Jonah', 'bg_bibfers' ),							//'Книга пророка Ионы',
+		'Mic' 		=>__('Micah', 'bg_bibfers' ),							//'Книга пророка Михея', 
+		'Naum' 		=>__('Nahum', 'bg_bibfers' ),							//'Книга пророка Наума',
+		'Habak' 	=>__('Habakkuk', 'bg_bibfers' ),						//'Книга пророка Аввакума', 
+		'Sofon' 	=>__('Zephaniah', 'bg_bibfers' ),						//'Книга пророка Софонии', 
+		'Hag' 		=>__('Haggai', 'bg_bibfers' ),							//'Книга пророка Аггея', 
+		'Zah' 		=>__('Zechariah', 'bg_bibfers' ),						//'Книга пророка Захарии',
+		'Mal' 		=>__('Malachi', 'bg_bibfers' ),							//'Книга пророка Малахии',
+		// Второканонические книги
+		'1Mac' 		=>__('1 Maccabees', 'bg_bibfers' ),						//'Первая книга Маккавейская',
+		'2Mac' 		=>__('2 Maccabees', 'bg_bibfers' ),						//'Вторая книга Маккавейская', 
+		'3Mac' 		=>__('3 Maccabees', 'bg_bibfers' ),						//'Третья книга Маккавейская', 
+		'Bar' 		=>__('Baruch', 'bg_bibfers' ),							//'Книга пророка Варуха', 
+		'2Ezr' 		=>__('2 Esdras', 'bg_bibfers' ),						//'Вторая книга Ездры', 
+		'3Ezr' 		=>__('3 Esdras', 'bg_bibfers' ),						//'Третья книга Ездры',
+		'Judf' 		=>__('Judith', 'bg_bibfers' ),							//'Книга Иудифи', 
+		'pJer' 		=>__('Letter of Jeremiah', 'bg_bibfers' ),				//'Послание Иеремии', 
+		'Solom' 	=>__('Wisdom', 'bg_bibfers' ),							//'Книга Премудрости Соломона',
+		'Sir' 		=>__('Sirach', 'bg_bibfers' ),							//'Книга Премудрости Иисуса, сына Сирахова', 
+		'Tov' 		=>__('Tobit (Tobias)', 'bg_bibfers' ),					//'Книга Товита',
+		// Новый Завет
+		// Евангилие
+		'Mt' 		=>__('Matthew', 'bg_bibfers' ),							//'Евангелие от Матфея',
+		'Mk' 		=>__('Mark', 'bg_bibfers' ),							//'Евангелие от Марка', 
+		'Lk' 		=>__('Luke', 'bg_bibfers' ),							//'Евангелие от Луки', 
+		'Jn' 		=>__('John', 'bg_bibfers' ),							//'Евангелие от Иоанна', 
+		// Деяния и послания Апостолов
+		'Act' 		=>__('Acts', 'bg_bibfers' ),							//'Деяния святых Апостолов', 
+		'Jac' 		=>__('James', 'bg_bibfers' ),							//'Послание Иакова', 
+		'1Pet'	 	=>__('1 Peter', 'bg_bibfers' ),							//'Первое послание Петра', 
+		'2Pet'	 	=>__('2 Peter', 'bg_bibfers' ),							//'Второе послание Петра',	
+		'1Jn' 		=>__('1 John', 'bg_bibfers' ),							//'Первое послание Иоанна', 
+		'2Jn' 		=>__('2 John', 'bg_bibfers' ),							//'Второе послание Иоанна', 
+		'3Jn' 		=>__('3 John', 'bg_bibfers' ),							//'Третье послание Иоанна',
+		'Juda'	 	=>__('Jude', 'bg_bibfers' ),							//'Послание Иуды', 
+		// Послания апостола Павла
+		'Rom' 		=>__('Romans', 'bg_bibfers' ),							//'Послание апостола Павла к Римлянам', 
+		'1Cor' 		=>__('1 Corinthians', 'bg_bibfers' ),					//'Первое послание апостола Павла к Коринфянам', 
+		'2Cor' 		=>__('2 Corinthians', 'bg_bibfers' ),					//'Второе послание апостола Павла к Коринфянам',
+		'Gal'	 	=>__('Galatians', 'bg_bibfers' ),						//'Послание апостола Павла к Галатам', 
+		'Eph' 		=>__('Ephesians', 'bg_bibfers' ),						//'Послание апостола Павла к Ефесянам', 
+		'Phil' 		=>__('Philippians', 'bg_bibfers' ),						//'Послание апостола Павла к Филиппийцам', 
+		'Col' 		=>__('Colossians', 'bg_bibfers' ),						//'Послание апостола Павла к Колоссянам',
+		'1Thes' 	=>__('1 Thessalonians', 'bg_bibfers' ),					//'Первое послание апостола Павла к Фессалоникийцам (Солунянам)',
+		'2Thes' 	=>__('2 Thessalonians', 'bg_bibfers' ),					//'Второе послание апостола Павла к Фессалоникийцам (Солунянам)',  
+		'1Tim' 		=>__('1 Timothy', 'bg_bibfers' ),						//'Первое послание апостола Павла к Тимофею', 
+		'2Tim'	 	=>__('2 Timothy', 'bg_bibfers' ),						//'Второе послание апостола Павла к Тимофею',
+		'Tit' 		=>__('Titus', 'bg_bibfers' ),							//'Послание апостола Павла к Титу', 
+		'Phlm'	 	=>__('Philemon', 'bg_bibfers' ),						//'Послание апостола Павла к Филимону', 
+		'Hebr'	 	=>__('Hebrews', 'bg_bibfers' ),							//'Послание апостола Павла к Евреям', 
+		'Apok' 		=>__('Revelation', 'bg_bibfers' ));						//'Откровение Иоанна Богослова (Апокалипсис)'
+
+	// Формируем полный текст всплывающей подсказки
+	$title_book = $bookTitle[$book];													// Полное наименование книги Библии
+	// translators: ch. - is abbr. "chapter"
+	return "<strong>".$title_book."</strong><br>";						
 }
 ?>

@@ -97,9 +97,13 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 2.1.0 =
+
+* Fastest display page. The tooltip is created when you hover the cursor over it only.
+
 = 2.0.0 =
 
-* In version 2.0, when you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
+* When you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
 
 = 1.0.0 =
 
@@ -159,6 +163,11 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+
+= 2.1.0 =
+
+* Fastest display page. The tooltip is created when you hover the cursor over it only. jQuery  must be available.
 
 = 2.0.0 =
 

@@ -167,7 +167,7 @@ c_lang_checked();
 		<li><?php printf(__('Share infotmation or make a nice blog post about the plugin', 'bg_bibfers')) ?></li>
 	</ul>
 	<div class="share42init" align="center" data-url="http://bogaiskov.ru/bg_bibfers/" data-title="<?php _e('Bg Bible References really cool plugin for Orthodox WordPress sites', 'bg_bibfers') ?>"></div>
-	<script type="text/javascript" src="<?php printf( plugins_url( 'share42/share42.js' , plugin_basename(__FILE__) ) ) ?>"></script>
+	<script type="text/javascript" src="<?php printf( plugins_url( 'share42/share42.js' , dirname(__FILE__) ) ) ?>"></script>
 
 	<h3><?php _e('Support', 'bg_bibfers') ?></h3>
 	<p><?php printf(__('Please see the <a href="%1$s" target="_blank">support forum</a> or my <a href="%2$s" target="_blank">personal site</a> for help.', 'bg_bibfers'), "http://wordpress.org/support/plugin/bg-biblie-references", "http://bogaiskov.ru/bg_bibfers/") ?></p>

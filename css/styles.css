@@ -72,5 +72,5 @@ p.bg_bibfers_close {
     color: #000000; 					/* Цвет текста */
 	text-decoration: none; 				/* Без подчеркивания */
 	text-align: start;					/* Прижать текст влево */
-    background-color: rgba(253,253,255,1); 	/* Полупрозрачный цвет фона */
+    background-color: rgba(253,253,255,0.99); 	/* Полупрозрачный цвет фона */
 }
