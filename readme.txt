@@ -97,6 +97,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 2.1.1 =
+
+* Fixed some bugs.
+
 = 2.1.0 =
 
 * Fastest display page. The tooltip is created when you hover the cursor over it only.
@@ -164,6 +168,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Upgrade Notice ==
 
+
+= 2.1.1 =
+
+* Fixed some bugs.
 
 = 2.1.0 =
 
