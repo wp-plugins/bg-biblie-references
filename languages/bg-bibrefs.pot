@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bg-biblie-references\n"
-"POT-Creation-Date: 2013-10-25 06:19:49+00:00\n"
+"POT-Creation-Date: 2013-11-07 09:23:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,820 +12,830 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: bg_bibrefs.php:72
+#: bg_bibrefs.php:79
 msgid "Bible References"
 msgstr ""
 
 #. translators: abbr. Genesis
-#: bg_bibrefs.php:120
+#: includes/references.php:60
 msgid "Gen"
 msgstr ""
 
 #. translators: abbr. Exodus
-#: bg_bibrefs.php:122
+#: includes/references.php:62
 msgid "Ex"
 msgstr ""
 
 #. translators: abbr. Leviticus
-#: bg_bibrefs.php:124
+#: includes/references.php:64
 msgid "Lev"
 msgstr ""
 
 #. translators: abbr. Numbers
-#: bg_bibrefs.php:126
+#: includes/references.php:66
 msgid "Num"
 msgstr ""
 
 #. translators: abbr. Deuteronomy
-#: bg_bibrefs.php:128
+#: includes/references.php:68
 msgid "Deut"
 msgstr ""
 
 #. translators: abbr. Joshua (Iesous)
-#: bg_bibrefs.php:131
+#: includes/references.php:71
 msgid "Nav"
 msgstr ""
 
 #. translators: abbr. Judges
-#: bg_bibrefs.php:133
+#: includes/references.php:73
 msgid "Judg"
 msgstr ""
 
 #. translators: abbr. Ruth
-#: bg_bibrefs.php:135
+#: includes/references.php:75
 msgid "Rth"
 msgstr ""
 
 #. translators: abbr. 1 Samuel (1 Kingdoms)
-#: bg_bibrefs.php:137
+#: includes/references.php:77
 msgid "1Sam"
 msgstr ""
 
 #. translators: abbr. 2 Samuel (2 Kingdoms)
-#: bg_bibrefs.php:139
+#: includes/references.php:79
 msgid "2Sam"
 msgstr ""
 
 #. translators: abbr. 1 Kings (3 Kingdoms)
-#: bg_bibrefs.php:141
+#: includes/references.php:81
 msgid "1King"
 msgstr ""
 
 #. translators: abbr. 2 Kings (4 Kingdoms)
-#: bg_bibrefs.php:143
+#: includes/references.php:83
 msgid "2King"
 msgstr ""
 
 #. translators: abbr. 1 Chronicles (1 Paralipomenon)
-#: bg_bibrefs.php:145
+#: includes/references.php:85
 msgid "1Chron"
 msgstr ""
 
 #. translators: abbr. 2 Chronicles (2 Paralipomenon)
-#: bg_bibrefs.php:147
+#: includes/references.php:87
 msgid "2Chron"
 msgstr ""
 
 #. translators: abbr. 1 Esdras
-#: bg_bibrefs.php:149
+#: includes/references.php:89
 msgid "Ezr"
 msgstr ""
 
 #. translators: abbr. Nehemiah (2 Esdras)
-#: bg_bibrefs.php:151
+#: includes/references.php:91
 msgid "Nehem"
 msgstr ""
 
 #. translators: abbr. Esther
-#: bg_bibrefs.php:153
+#: includes/references.php:93
 msgid "Est"
 msgstr ""
 
 #. translators: abbr. Job
-#: bg_bibrefs.php:156 bg_bibrefs.php:304
+#: includes/references.php:96 includes/references.php:295
 msgid "Job"
 msgstr ""
 
 #. translators: abbr. Psalms
-#: bg_bibrefs.php:158
+#: includes/references.php:98
 msgid "Ps"
 msgstr ""
 
 #. translators: abbr. Proverbs
-#: bg_bibrefs.php:160
+#: includes/references.php:100
 msgid "Prov"
 msgstr ""
 
 #. translators: abbr. Ecclesiastes
-#: bg_bibrefs.php:162
+#: includes/references.php:102
 msgid "Eccl"
 msgstr ""
 
 #. translators: abbr. Song of Songs (Aisma Aismaton)
-#: bg_bibrefs.php:164
+#: includes/references.php:104
 msgid "Song"
 msgstr ""
 
 #. translators: abbr. Isaiah
-#: bg_bibrefs.php:166
+#: includes/references.php:106
 msgid "Is"
 msgstr ""
 
 #. translators: abbr. Jeremiah
-#: bg_bibrefs.php:168
+#: includes/references.php:108
 msgid "Jer"
 msgstr ""
 
 #. translators: abbr. Lamentations
-#: bg_bibrefs.php:170
+#: includes/references.php:110
 msgid "Lam"
 msgstr ""
 
 #. translators: abbr. Ezekiel
-#: bg_bibrefs.php:172
+#: includes/references.php:112
 msgid "Ezek"
 msgstr ""
 
 #. translators: abbr. Daniel
-#: bg_bibrefs.php:174
+#: includes/references.php:114
 msgid "Dan"
 msgstr ""
 
 #. translators: abbr. Hosea
-#: bg_bibrefs.php:177
+#: includes/references.php:117
 msgid "Hos"
 msgstr ""
 
 #. translators: abbr. Joel
-#: bg_bibrefs.php:179 bg_bibrefs.php:317
+#: includes/references.php:119 includes/references.php:308
 msgid "Joel"
 msgstr ""
 
 #. translators: abbr. Amos
-#: bg_bibrefs.php:181
+#: includes/references.php:121
 msgid "Am"
 msgstr ""
 
 #. translators: abbr. Obadiah
-#: bg_bibrefs.php:183
+#: includes/references.php:123
 msgid "Avd"
 msgstr ""
 
 #. translators: abbr. Jonah
-#: bg_bibrefs.php:185
+#: includes/references.php:125
 msgid "Jona"
 msgstr ""
 
 #. translators: abbr. Micah
-#: bg_bibrefs.php:187
+#: includes/references.php:127
 msgid "Mic"
 msgstr ""
 
 #. translators: abbr. Nahum
-#: bg_bibrefs.php:189
+#: includes/references.php:129
 msgid "Naum"
 msgstr ""
 
 #. translators: abbr. Habakkuk
-#: bg_bibrefs.php:191
+#: includes/references.php:131
 msgid "Habak"
 msgstr ""
 
 #. translators: abbr. Zephaniah
-#: bg_bibrefs.php:193
+#: includes/references.php:133
 msgid "Sofon"
 msgstr ""
 
 #. translators: abbr. Haggai
-#: bg_bibrefs.php:195
+#: includes/references.php:135
 msgid "Hag"
 msgstr ""
 
 #. translators: abbr. Zechariah
-#: bg_bibrefs.php:197
+#: includes/references.php:137
 msgid "Zah"
 msgstr ""
 
 #. translators: abbr. Malachi
-#: bg_bibrefs.php:199
+#: includes/references.php:139
 msgid "Mal"
 msgstr ""
 
 #. translators: abbr. 1 Maccabees
-#: bg_bibrefs.php:202
+#: includes/references.php:142
 msgid "1Mac"
 msgstr ""
 
 #. translators: abbr. 2 Maccabees
-#: bg_bibrefs.php:204
+#: includes/references.php:144
 msgid "2Mac"
 msgstr ""
 
 #. translators: abbr. 3 Maccabees
-#: bg_bibrefs.php:206
+#: includes/references.php:146
 msgid "3Mac"
 msgstr ""
 
 #. translators: abbr. Baruch
-#: bg_bibrefs.php:208
+#: includes/references.php:148
 msgid "Bar"
 msgstr ""
 
 #. translators: abbr. 2 Esdras
-#: bg_bibrefs.php:210
+#: includes/references.php:150
 msgid "2Ezr"
 msgstr ""
 
 #. translators: abbr. 3 Esdras
-#: bg_bibrefs.php:212
+#: includes/references.php:152
 msgid "3Ezr"
 msgstr ""
 
 #. translators: abbr. Judith
-#: bg_bibrefs.php:214
+#: includes/references.php:154
 msgid "Judf"
 msgstr ""
 
 #. translators: abbr. Letter of Jeremiah
-#: bg_bibrefs.php:216
+#: includes/references.php:156
 msgid "pJer"
 msgstr ""
 
 #. translators: abbr. Wisdom
-#: bg_bibrefs.php:218
+#: includes/references.php:158
 msgid "Solom"
 msgstr ""
 
 #. translators: abbr. Sirach
-#: bg_bibrefs.php:220
+#: includes/references.php:160
 msgid "Sir"
 msgstr ""
 
 #. translators: abbr. Tobit (Tobias)
-#: bg_bibrefs.php:222
+#: includes/references.php:162
 msgid "Tov"
 msgstr ""
 
 #. translators: abbr. Matthew
-#: bg_bibrefs.php:226
+#: includes/references.php:166
 msgid "Mt"
 msgstr ""
 
 #. translators: abbr. Mark
-#: bg_bibrefs.php:228
+#: includes/references.php:168
 msgid "Mk"
 msgstr ""
 
 #. translators: abbr. Luke
-#: bg_bibrefs.php:230
+#: includes/references.php:170
 msgid "Lk"
 msgstr ""
 
 #. translators: abbr. John
-#: bg_bibrefs.php:232
+#: includes/references.php:172
 msgid "Jn"
 msgstr ""
 
 #. translators: abbr. Acts
-#: bg_bibrefs.php:235
+#: includes/references.php:175
 msgid "Act"
 msgstr ""
 
 #. translators: abbr. James
-#: bg_bibrefs.php:237
+#: includes/references.php:177
 msgid "Jac"
 msgstr ""
 
 #. translators: abbr. 1 Peter
-#: bg_bibrefs.php:239
+#: includes/references.php:179
 msgid "1Pet"
 msgstr ""
 
 #. translators: abbr. 2 Peter
-#: bg_bibrefs.php:241
+#: includes/references.php:181
 msgid "2Pet"
 msgstr ""
 
 #. translators: abbr. 1 John
-#: bg_bibrefs.php:243
+#: includes/references.php:183
 msgid "1Jn"
 msgstr ""
 
 #. translators: abbr. 2 John
-#: bg_bibrefs.php:245
+#: includes/references.php:185
 msgid "2Jn"
 msgstr ""
 
 #. translators: abbr. 3 John
-#: bg_bibrefs.php:247
+#: includes/references.php:187
 msgid "3Jn"
 msgstr ""
 
 #. translators: abbr. Jude
-#: bg_bibrefs.php:249
+#: includes/references.php:189
 msgid "Juda"
 msgstr ""
 
 #. translators: abbr. Romans
-#: bg_bibrefs.php:252
+#: includes/references.php:192
 msgid "Rom"
 msgstr ""
 
 #. translators: abbr. 1 Corinthians
-#: bg_bibrefs.php:254
+#: includes/references.php:194
 msgid "1Cor"
 msgstr ""
 
 #. translators: abbr. 2 Corinthians
-#: bg_bibrefs.php:256
+#: includes/references.php:196
 msgid "2Cor"
 msgstr ""
 
 #. translators: abbr. Galatians
-#: bg_bibrefs.php:258
+#: includes/references.php:198
 msgid "Gal"
 msgstr ""
 
 #. translators: abbr. Ephesians
-#: bg_bibrefs.php:260
+#: includes/references.php:200
 msgid "Eph"
 msgstr ""
 
 #. translators: abbr. Philippians
-#: bg_bibrefs.php:262
+#: includes/references.php:202
 msgid "Phil"
 msgstr ""
 
 #. translators: abbr. Colossians
-#: bg_bibrefs.php:264
+#: includes/references.php:204
 msgid "Col"
 msgstr ""
 
 #. translators: abbr. 1 Thessalonians
-#: bg_bibrefs.php:266
+#: includes/references.php:206
 msgid "1Thes"
 msgstr ""
 
 #. translators: abbr. 2 Thessalonians
-#: bg_bibrefs.php:268
+#: includes/references.php:208
 msgid "2Thes"
 msgstr ""
 
 #. translators: abbr. 1 Timothy
-#: bg_bibrefs.php:270
+#: includes/references.php:210
 msgid "1Tim"
 msgstr ""
 
 #. translators: abbr. 2 Timothy
-#: bg_bibrefs.php:272
+#: includes/references.php:212
 msgid "2Tim"
 msgstr ""
 
 #. translators: abbr. Titus
-#: bg_bibrefs.php:274
+#: includes/references.php:214
 msgid "Tit"
 msgstr ""
 
 #. translators: abbr. Philemon
-#: bg_bibrefs.php:276
+#: includes/references.php:216
 msgid "Phlm"
 msgstr ""
 
 #. translators: abbr. Hebrews
-#: bg_bibrefs.php:278
+#: includes/references.php:218
 msgid "Hebr"
 msgstr ""
 
 #. translators: abbr. Revelation
-#: bg_bibrefs.php:280
+#: includes/references.php:220
 msgid "Apok"
 msgstr ""
 
-#: bg_bibrefs.php:285
-msgid "Genesis"
-msgstr ""
-
-#: bg_bibrefs.php:286
-msgid "Exodus"
-msgstr ""
-
-#: bg_bibrefs.php:287
-msgid "Leviticus"
-msgstr ""
-
-#: bg_bibrefs.php:288
-msgid "Numbers"
-msgstr ""
-
-#: bg_bibrefs.php:289
-msgid "Deuteronomy"
-msgstr ""
-
-#: bg_bibrefs.php:291
-msgid "Joshua (Iesous)"
-msgstr ""
-
-#: bg_bibrefs.php:292
-msgid "Judges"
-msgstr ""
-
-#: bg_bibrefs.php:293
-msgid "Ruth"
-msgstr ""
-
-#: bg_bibrefs.php:294
-msgid "1 Samuel (1 Kingdoms)"
-msgstr ""
-
-#: bg_bibrefs.php:295
-msgid "2 Samuel (2 Kingdoms)"
-msgstr ""
-
-#: bg_bibrefs.php:296
-msgid "1 Kings (3 Kingdoms)"
-msgstr ""
-
-#: bg_bibrefs.php:297
-msgid "2 Kings (4 Kingdoms)"
-msgstr ""
-
-#: bg_bibrefs.php:298
-msgid "1 Chronicles (1 Paralipomenon)"
-msgstr ""
-
-#: bg_bibrefs.php:299
-msgid "2 Chronicles (2 Paralipomenon)"
-msgstr ""
-
-#: bg_bibrefs.php:300
-msgid "1 Esdras"
-msgstr ""
-
-#: bg_bibrefs.php:301
-msgid "Nehemiah (2 Esdras)"
-msgstr ""
-
-#: bg_bibrefs.php:302
-msgid "Esther"
-msgstr ""
-
-#: bg_bibrefs.php:305
-msgid "Psalms"
-msgstr ""
-
-#: bg_bibrefs.php:306
-msgid "Proverbs"
-msgstr ""
-
-#: bg_bibrefs.php:307
-msgid "Ecclesiastes"
-msgstr ""
-
-#: bg_bibrefs.php:308
-msgid "Song of Songs (Aisma Aismaton)"
-msgstr ""
-
-#: bg_bibrefs.php:310
-msgid "Isaiah"
-msgstr ""
-
-#: bg_bibrefs.php:311
-msgid "Jeremiah"
-msgstr ""
-
-#: bg_bibrefs.php:312
-msgid "Lamentations"
-msgstr ""
-
-#: bg_bibrefs.php:313
-msgid "Ezekiel"
-msgstr ""
-
-#: bg_bibrefs.php:314
-msgid "Daniel"
-msgstr ""
-
-#: bg_bibrefs.php:316
-msgid "Hosea"
-msgstr ""
-
-#: bg_bibrefs.php:318
-msgid "Amos"
-msgstr ""
-
-#: bg_bibrefs.php:319
-msgid "Obadiah"
-msgstr ""
-
-#: bg_bibrefs.php:320
-msgid "Jonah"
-msgstr ""
-
-#: bg_bibrefs.php:321
-msgid "Micah"
-msgstr ""
-
-#: bg_bibrefs.php:322
-msgid "Nahum"
-msgstr ""
-
-#: bg_bibrefs.php:323
-msgid "Habakkuk"
-msgstr ""
-
-#: bg_bibrefs.php:324
-msgid "Zephaniah"
-msgstr ""
-
-#: bg_bibrefs.php:325
-msgid "Haggai"
-msgstr ""
-
-#: bg_bibrefs.php:326
-msgid "Zechariah"
-msgstr ""
-
-#: bg_bibrefs.php:327
-msgid "Malachi"
-msgstr ""
-
-#: bg_bibrefs.php:329
-msgid "1 Maccabees"
-msgstr ""
-
-#: bg_bibrefs.php:330
-msgid "2 Maccabees"
-msgstr ""
-
-#: bg_bibrefs.php:331
-msgid "3 Maccabees"
-msgstr ""
-
-#: bg_bibrefs.php:332
-msgid "Baruch"
-msgstr ""
-
-#: bg_bibrefs.php:333
-msgid "2 Esdras"
-msgstr ""
-
-#: bg_bibrefs.php:334
-msgid "3 Esdras"
-msgstr ""
-
-#: bg_bibrefs.php:335
-msgid "Judith"
-msgstr ""
-
-#: bg_bibrefs.php:336
-msgid "Letter of Jeremiah"
-msgstr ""
-
-#: bg_bibrefs.php:337
-msgid "Wisdom"
-msgstr ""
-
-#: bg_bibrefs.php:338
-msgid "Sirach"
-msgstr ""
-
-#: bg_bibrefs.php:339
-msgid "Tobit (Tobias)"
-msgstr ""
-
-#: bg_bibrefs.php:342
-msgid "Matthew"
-msgstr ""
-
-#: bg_bibrefs.php:343
-msgid "Mark"
-msgstr ""
-
-#: bg_bibrefs.php:344
-msgid "Luke"
-msgstr ""
-
-#: bg_bibrefs.php:345
-msgid "John"
-msgstr ""
-
-#: bg_bibrefs.php:347
-msgid "Acts"
-msgstr ""
-
-#: bg_bibrefs.php:348
-msgid "James"
-msgstr ""
-
-#: bg_bibrefs.php:349
-msgid "1 Peter"
-msgstr ""
-
-#: bg_bibrefs.php:350
-msgid "2 Peter"
-msgstr ""
-
-#: bg_bibrefs.php:351
-msgid "1 John"
-msgstr ""
-
-#: bg_bibrefs.php:352
-msgid "2 John"
-msgstr ""
-
-#: bg_bibrefs.php:353
-msgid "3 John"
-msgstr ""
-
-#: bg_bibrefs.php:354
-msgid "Jude"
-msgstr ""
-
-#: bg_bibrefs.php:356
-msgid "Romans"
-msgstr ""
-
-#: bg_bibrefs.php:357
-msgid "1 Corinthians"
-msgstr ""
-
-#: bg_bibrefs.php:358
-msgid "2 Corinthians"
-msgstr ""
-
-#: bg_bibrefs.php:359
-msgid "Galatians"
-msgstr ""
-
-#: bg_bibrefs.php:360
-msgid "Ephesians"
-msgstr ""
-
-#: bg_bibrefs.php:361
-msgid "Philippians"
-msgstr ""
-
-#: bg_bibrefs.php:362
-msgid "Colossians"
-msgstr ""
-
-#: bg_bibrefs.php:363
-msgid "1 Thessalonians"
-msgstr ""
-
-#: bg_bibrefs.php:364
-msgid "2 Thessalonians"
-msgstr ""
-
-#: bg_bibrefs.php:365
-msgid "1 Timothy"
-msgstr ""
-
-#: bg_bibrefs.php:366
-msgid "2 Timothy"
-msgstr ""
-
-#: bg_bibrefs.php:367
-msgid "Titus"
-msgstr ""
-
-#: bg_bibrefs.php:368
-msgid "Philemon"
-msgstr ""
-
-#: bg_bibrefs.php:369
-msgid "Hebrews"
-msgstr ""
-
-#: bg_bibrefs.php:370
-msgid "Revelation"
-msgstr ""
-
 #. translators: ch. - is abbr. "chapter"
-#: bg_bibrefs.php:416
+#: includes/references.php:258
 msgid "ch. "
 msgstr ""
 
-#: bg_bibrefs.php:513
+#: includes/references.php:276
+msgid "Genesis"
+msgstr ""
+
+#: includes/references.php:277
+msgid "Exodus"
+msgstr ""
+
+#: includes/references.php:278
+msgid "Leviticus"
+msgstr ""
+
+#: includes/references.php:279
+msgid "Numbers"
+msgstr ""
+
+#: includes/references.php:280
+msgid "Deuteronomy"
+msgstr ""
+
+#: includes/references.php:282
+msgid "Joshua (Iesous)"
+msgstr ""
+
+#: includes/references.php:283
+msgid "Judges"
+msgstr ""
+
+#: includes/references.php:284
+msgid "Ruth"
+msgstr ""
+
+#: includes/references.php:285
+msgid "1 Samuel (1 Kingdoms)"
+msgstr ""
+
+#: includes/references.php:286
+msgid "2 Samuel (2 Kingdoms)"
+msgstr ""
+
+#: includes/references.php:287
+msgid "1 Kings (3 Kingdoms)"
+msgstr ""
+
+#: includes/references.php:288
+msgid "2 Kings (4 Kingdoms)"
+msgstr ""
+
+#: includes/references.php:289
+msgid "1 Chronicles (1 Paralipomenon)"
+msgstr ""
+
+#: includes/references.php:290
+msgid "2 Chronicles (2 Paralipomenon)"
+msgstr ""
+
+#: includes/references.php:291
+msgid "1 Esdras"
+msgstr ""
+
+#: includes/references.php:292
+msgid "Nehemiah (2 Esdras)"
+msgstr ""
+
+#: includes/references.php:293
+msgid "Esther"
+msgstr ""
+
+#: includes/references.php:296
+msgid "Psalms"
+msgstr ""
+
+#: includes/references.php:297
+msgid "Proverbs"
+msgstr ""
+
+#: includes/references.php:298
+msgid "Ecclesiastes"
+msgstr ""
+
+#: includes/references.php:299
+msgid "Song of Songs (Aisma Aismaton)"
+msgstr ""
+
+#: includes/references.php:301
+msgid "Isaiah"
+msgstr ""
+
+#: includes/references.php:302
+msgid "Jeremiah"
+msgstr ""
+
+#: includes/references.php:303
+msgid "Lamentations"
+msgstr ""
+
+#: includes/references.php:304
+msgid "Ezekiel"
+msgstr ""
+
+#: includes/references.php:305
+msgid "Daniel"
+msgstr ""
+
+#: includes/references.php:307
+msgid "Hosea"
+msgstr ""
+
+#: includes/references.php:309
+msgid "Amos"
+msgstr ""
+
+#: includes/references.php:310
+msgid "Obadiah"
+msgstr ""
+
+#: includes/references.php:311
+msgid "Jonah"
+msgstr ""
+
+#: includes/references.php:312
+msgid "Micah"
+msgstr ""
+
+#: includes/references.php:313
+msgid "Nahum"
+msgstr ""
+
+#: includes/references.php:314
+msgid "Habakkuk"
+msgstr ""
+
+#: includes/references.php:315
+msgid "Zephaniah"
+msgstr ""
+
+#: includes/references.php:316
+msgid "Haggai"
+msgstr ""
+
+#: includes/references.php:317
+msgid "Zechariah"
+msgstr ""
+
+#: includes/references.php:318
+msgid "Malachi"
+msgstr ""
+
+#: includes/references.php:320
+msgid "1 Maccabees"
+msgstr ""
+
+#: includes/references.php:321
+msgid "2 Maccabees"
+msgstr ""
+
+#: includes/references.php:322
+msgid "3 Maccabees"
+msgstr ""
+
+#: includes/references.php:323
+msgid "Baruch"
+msgstr ""
+
+#: includes/references.php:324
+msgid "2 Esdras"
+msgstr ""
+
+#: includes/references.php:325
+msgid "3 Esdras"
+msgstr ""
+
+#: includes/references.php:326
+msgid "Judith"
+msgstr ""
+
+#: includes/references.php:327
+msgid "Letter of Jeremiah"
+msgstr ""
+
+#: includes/references.php:328
+msgid "Wisdom"
+msgstr ""
+
+#: includes/references.php:329
+msgid "Sirach"
+msgstr ""
+
+#: includes/references.php:330
+msgid "Tobit (Tobias)"
+msgstr ""
+
+#: includes/references.php:333
+msgid "Matthew"
+msgstr ""
+
+#: includes/references.php:334
+msgid "Mark"
+msgstr ""
+
+#: includes/references.php:335
+msgid "Luke"
+msgstr ""
+
+#: includes/references.php:336
+msgid "John"
+msgstr ""
+
+#: includes/references.php:338
+msgid "Acts"
+msgstr ""
+
+#: includes/references.php:339
+msgid "James"
+msgstr ""
+
+#: includes/references.php:340
+msgid "1 Peter"
+msgstr ""
+
+#: includes/references.php:341
+msgid "2 Peter"
+msgstr ""
+
+#: includes/references.php:342
+msgid "1 John"
+msgstr ""
+
+#: includes/references.php:343
+msgid "2 John"
+msgstr ""
+
+#: includes/references.php:344
+msgid "3 John"
+msgstr ""
+
+#: includes/references.php:345
+msgid "Jude"
+msgstr ""
+
+#: includes/references.php:347
+msgid "Romans"
+msgstr ""
+
+#: includes/references.php:348
+msgid "1 Corinthians"
+msgstr ""
+
+#: includes/references.php:349
+msgid "2 Corinthians"
+msgstr ""
+
+#: includes/references.php:350
+msgid "Galatians"
+msgstr ""
+
+#: includes/references.php:351
+msgid "Ephesians"
+msgstr ""
+
+#: includes/references.php:352
+msgid "Philippians"
+msgstr ""
+
+#: includes/references.php:353
+msgid "Colossians"
+msgstr ""
+
+#: includes/references.php:354
+msgid "1 Thessalonians"
+msgstr ""
+
+#: includes/references.php:355
+msgid "2 Thessalonians"
+msgstr ""
+
+#: includes/references.php:356
+msgid "1 Timothy"
+msgstr ""
+
+#: includes/references.php:357
+msgid "2 Timothy"
+msgstr ""
+
+#: includes/references.php:358
+msgid "Titus"
+msgstr ""
+
+#: includes/references.php:359
+msgid "Philemon"
+msgstr ""
+
+#: includes/references.php:360
+msgid "Hebrews"
+msgstr ""
+
+#: includes/references.php:361
+msgid "Revelation"
+msgstr ""
+
+#: includes/settings.php:75
 msgid "Options saved."
 msgstr ""
 
-#: bg_bibrefs.php:524
+#: includes/settings.php:86
 msgid "Bg Bible References Plugin Options"
 msgstr ""
 
-#: bg_bibrefs.php:537
+#: includes/settings.php:99
 msgid "Display text of the Bible in languages:"
 msgstr ""
 
-#: bg_bibrefs.php:541
+#: includes/settings.php:103
 msgid "Church Slavic"
 msgstr ""
 
-#: bg_bibrefs.php:542
+#: includes/settings.php:104
 msgid "Russian"
 msgstr ""
 
-#: bg_bibrefs.php:543
+#: includes/settings.php:105
 msgid "Greek"
 msgstr ""
 
-#: bg_bibrefs.php:544
+#: includes/settings.php:106
 msgid "Latin"
 msgstr ""
 
-#: bg_bibrefs.php:545
+#: includes/settings.php:107
 msgid "Hebrew"
 msgstr ""
 
-#: bg_bibrefs.php:548
+#: includes/settings.php:110
 msgid "Font for Church Slavonic text"
 msgstr ""
 
-#: bg_bibrefs.php:550
+#: includes/settings.php:112
 msgid "Church Slavic font"
 msgstr ""
 
-#: bg_bibrefs.php:551
+#: includes/settings.php:113
 msgid "Russian font (\"Old\" style)"
 msgstr ""
 
-#: bg_bibrefs.php:552
+#: includes/settings.php:114
 msgid "HIP-standard"
 msgstr ""
 
-#: bg_bibrefs.php:565
+#: includes/settings.php:127
 msgid "Open page with Bible text"
 msgstr ""
 
-#: bg_bibrefs.php:567
+#: includes/settings.php:129
 msgid "in new window"
 msgstr ""
 
-#: bg_bibrefs.php:568
+#: includes/settings.php:130
 msgid "in current window"
 msgstr ""
 
-#: bg_bibrefs.php:571
-msgid "Reference links class"
+#: includes/settings.php:133
+msgid "Reference links CSS class"
 msgstr ""
 
-#: bg_bibrefs.php:578
+#: includes/settings.php:138
+msgid "Show Bible verses in popup"
+msgstr ""
+
+#: includes/settings.php:140
+msgid ""
+"<br><i>(if this option is disabled or data are not received from the server,"
+"<br>popup showing the chapter number and verse numbers)</i>"
+msgstr ""
+
+#: includes/settings.php:145
 msgid "Update Options"
 msgstr ""
 
-#: bg_bibrefs.php:590
+#: includes/settings.php:157
 msgid "Thanks for using Bg Biblie References"
 msgstr ""
 
-#: bg_bibrefs.php:592
+#: includes/settings.php:159
 msgid ""
 "Dear brothers and sisters!<br />Thank you for using my plugin!<br />I hope "
 "it is useful for you."
 msgstr ""
 
-#: bg_bibrefs.php:593
+#: includes/settings.php:160
 msgid "Vadim Bogaiskov"
 msgstr ""
 
-#: bg_bibrefs.php:595
+#: includes/settings.php:162
 msgid "I like this plugin<br>– how can I thank you?"
 msgstr ""
 
-#: bg_bibrefs.php:596
+#: includes/settings.php:163
 msgid "There are several ways for you to say thanks:"
 msgstr ""
 
-#: bg_bibrefs.php:598
+#: includes/settings.php:165
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Give a donation</a>  for the construction "
 "of the church of Sts. Peter and Fevronia in Marino"
 msgstr ""
 
-#: bg_bibrefs.php:599
+#: includes/settings.php:166
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Give it a nice review</a> over at the "
 "WordPress Plugin Directory"
 msgstr ""
 
-#: bg_bibrefs.php:600
+#: includes/settings.php:167
 msgid "Share infotmation or make a nice blog post about the plugin"
 msgstr ""
 
-#: bg_bibrefs.php:602
+#: includes/settings.php:169
 msgid "Bg Bible References really cool plugin for Orthodox WordPress sites"
 msgstr ""
 
-#: bg_bibrefs.php:605
+#: includes/settings.php:172
 msgid "Support"
 msgstr ""
 
-#: bg_bibrefs.php:606
+#: includes/settings.php:173
 msgid ""
 "Please see the <a href=\"%1$s\" target=\"_blank\">support forum</a> or my <a "
 "href=\"%2$s\" target=\"_blank\">personal site</a> for help."
 msgstr ""
 
-#: bg_bibrefs.php:608
+#: includes/settings.php:175
 msgid "God protect you!"
 msgstr ""
