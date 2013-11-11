@@ -48,8 +48,8 @@ Russian:
 Файлы книг Библии взяты с сайта patriarchia.ru и теперь поставляется вместе с плагином. 
 При отключении этой опции вместо стихов отображается номер главы и номера стихов.
 
-Шорт-код [bible book='Mt' ch='2:3-6' type='verses']выводит цитаты из Библии в тексте страницы.
-Здесь: book – обозначение книги латинскими буквами, ch – номера глав и стихов, type – указывает формат вывода.
+Шорт-код [bible book='Mt' ch='2:3-6' type='verses'] выводит цитаты из Библии в тексте страницы.
+Здесь: book – обозначение книги (латинскими буквами), ch – номера глав и стихов, type – формат вывода.
 Если  type=’book’, то отображаются наименование книги, заголовки глав и стихи, каждый отдельным абзацем, с указанием его номера.
 Если  type=’verses’, то отображаются только стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
@@ -83,7 +83,7 @@ Bible E-books are taken from the site patriarchia.ru and now comes with the plug
 If you disable this option, the number of the chapter and verse numbers will displayed instead of verses.
 
 Short code [bible book = 'Mt' ch = '2 :3-6 'type =' verses'] displays quotes from the Bible in the text of the page.
-Here: book - the designation of the book in Latin letters, ch - numbers of chapters and verses, type - the output format.
+Here: book - the designation of the book (Latin letters), ch - numbers of chapters and verses, type - the output format.
 If type = 'book', it displays the name of the book, chapter and verse, in separate paragraph, indicating of the verse number.
 If type = 'verses', it displays only the verses, in separate paragraph, with the chapter number and verse number.
 If type = 'quote', it displays only the verses without dividing them into paragraphs.
