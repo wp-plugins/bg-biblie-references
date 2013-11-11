@@ -81,7 +81,7 @@ function bg_bibfers($content) {
 function bg_bibfers_qoutes( $atts ) {
 	extract( shortcode_atts( array(
 		'book' => '',
-		'ch' => '',
+		'ch' => '1-99',
 		'type' => 'verses'		
 	), $atts ) );
 	$quote = bg_bibfers_getQuotes($book, $ch, $type);
