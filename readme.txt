@@ -52,9 +52,8 @@ Russian:
 Здесь: book – обозначение книги (латинскими буквами), ch – номера глав и стихов, type – формат вывода.
 Если  type=’book’, то отображаются наименование книги, заголовки глав и стихи, каждый отдельным абзацем, с указанием его номера.
 Если  type=’verses’, то отображаются только стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
+Если  type=’b_verses’, то отображаются только стихи, каждый отдельным абзацем, с указанием короткого названия книги, номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
-
-Если  type=’book’, то отображаются наименование книги (h3), заголовки глав (h4) и стихи, каждый отдельным абзацем, с указанием его номера:
 
 English: 
 
@@ -84,8 +83,9 @@ If you disable this option, the number of the chapter and verse numbers will dis
 
 Short code [bible book = 'Mt' ch = '2 :3-6 'type =' verses'] displays quotes from the Bible in the text of the page.
 Here: book - the designation of the book (Latin letters), ch - numbers of chapters and verses, type - the output format.
-If type = 'book', it displays the name of the book, chapter and verse, in separate paragraph, indicating of the verse number.
-If type = 'verses', it displays only the verses, in separate paragraph, with the chapter number and verse number.
+If type = 'book', it displays the name of the book, chapter and verse in separate paragraph with verse number.
+If type = 'verses', it displays only the verses in separate paragraph with chapter number and verse number.
+If type = 'b_verses', it displays only the verses in separate paragraph with short book title, chapter number and verse number.
 If type = 'quote', it displays only the verses without dividing them into paragraphs.
 
 == Installation ==
@@ -110,6 +110,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 2. Page of Bible verses
 
 == Changelog ==
+
+= 2.2.1 =
+
+* Added type='b_verses' in Short code [bible].
 
 = 2.2.0 =
 
@@ -185,6 +189,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+
+* Added type='b_verses' in Short code [bible].
 
 = 2.2.0 =
 

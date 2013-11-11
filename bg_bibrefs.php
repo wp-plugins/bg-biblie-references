@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-    Version: 2.2.0
+    Version: 2.2.1
     Author URI: http://bogaiskov.ru 
 */
 
@@ -47,7 +47,7 @@ include_once('includes/references.php');
 include_once('includes/quotes.php');
 
 
-define('BG_BIBREFS_VERSION', '2.1.0');
+define('BG_BIBREFS_VERSION', '2.2.1');
 if ( !is_admin() ) {
 	wp_enqueue_script( 'bg_bibrefs_proc', plugins_url( 'js/bg_bibrefs.js' , __FILE__ ), false, BG_BIBREFS_VERSION, true );
 }
