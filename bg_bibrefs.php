@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-    Version: 2.1.1
+    Version: 2.2.0
     Author URI: http://bogaiskov.ru 
 */
 
@@ -44,6 +44,8 @@ load_plugin_textdomain( 'bg_bibfers', false, dirname( plugin_basename( __FILE__ 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
 include_once('includes/references.php');
+include_once('includes/quotes.php');
+
 
 define('BG_BIBREFS_VERSION', '2.1.0');
 if ( !is_admin() ) {
@@ -60,6 +62,8 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
 	if (function_exists('register_uninstall_hook')) {
 		register_uninstall_hook(__FILE__, 'bg_bibfers_deinstall');
 	}
+// Регистрируем шорт-код bible
+	add_shortcode( 'bible', 'bg_bibfers_qoutes' );
 }
  
 /*****************************************************************************************
@@ -72,6 +76,16 @@ function bg_bibfers($content) {
 //	if ( is_single() || is_page())
 		$content = bg_bibfers_bible_proc($content);
 	return $content;
+}
+// Функция обработки шорт-кода bible
+function bg_bibfers_qoutes( $atts ) {
+	extract( shortcode_atts( array(
+		'book' => '',
+		'ch' => '',
+		'type' => 'verses'		
+	), $atts ) );
+	$quote = bg_bibfers_getQuotes($book, $ch, $type);
+	return "{$quote}";
 }
 // Функция действия перед крючком добавления меню
 function bg_bibfers_add_pages() {
