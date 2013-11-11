@@ -95,22 +95,6 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 		'Hebr'	 	=>'heb',							//'Послание апостола Павла к Евреям', 
 		'Apok'	 	=>'rev');							//'Откровение Иоанна Богослова (Апокалипсис)'
 
-	switch ($type) {
-		case "book":
-			$verses = "<h3>".bg_bibfers_getTitle($book)."</h3>";
-			$typeId = 0;
-        break;	
-		case "verses":
-			$verses = "";
-			$typeId = 1;
-        break;
-		case "quotes":
-			$verses = "";
-			$typeId = 2;	
-        break;	
-	}
-
-		
 /*******************************************************************************
    Преобразование обозначения книги из формата azbyka.ru в формат patriarhia.ru
    чтение и преобразование файла книги
@@ -121,6 +105,9 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 	$code = file_get_contents(plugins_url( 'bible/'.$book_file , dirname(__FILE__ )));		// Получить данные с сайта
 	$json = json_decode($code, true);														// Преобразовать json в массив
 
+	if ($type == "book") $verses = "<h3>".bg_bibfers_getTitle($book)."</h3>";
+	else $verses = "";
+		
 /*******************************************************************************
    Разбор ссылки и формирование текста стихов Библии
   
@@ -169,7 +156,7 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 					} else {
 						$vr2 = $vr1;
 					}
-					$verses = $verses.bg_bibfers_printVerses ($json, $ch1, $ch1, $vr1, $vr2, $typeId);
+					$verses = $verses.bg_bibfers_printVerses ($json, $ch1, $ch1, $vr1, $vr2, $type);
 					if ($sp == "") break;
 				}
 			}
@@ -188,7 +175,7 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 			} else {
 				$ch2 = $ch1;
 			}
-			$verses = $verses.bg_bibfers_printVerses ($json, $ch1, $ch2, 1, 999, $typeId);
+			$verses = $verses.bg_bibfers_printVerses ($json, $ch1, $ch2, 1, 999, $type);
 		}
 		if ($sp == "") break;
 	}
@@ -198,7 +185,7 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 	Формирование содержания цитаты
   
 *******************************************************************************/  
-function bg_bibfers_printVerses ($json, $ch1, $ch2, $vr1, $vr2, $typeId) {
+function bg_bibfers_printVerses ($json, $ch1, $ch2, $vr1, $vr2, $type) {
     $class_val = get_option( 'bg_bibfers_class' );
 	if ($class_val == "") $class_val = 'bg_bibfers';
 	$verses = "";
@@ -209,19 +196,21 @@ function bg_bibfers_printVerses ($json, $ch1, $ch2, $vr1, $vr2, $typeId) {
 		$vr = (int)$json[$i][stix];
 		if ( $ch >= $ch1 && $ch <= $ch2) {
 			if ( $vr >= $vr1 && $vr <= $vr2) {
-				if ($typeId == 0) { 																		// Тип: книга
+				if ($type == 'book') { 																		// Тип: книга
 					if ($chr != $ch) {
 						$verses = $verses."<h4>".__('Chapter', 'bg_bibfers')." ".$ch."</h4>";					// Печатаем номер главы
 						$chr = $ch;
 					}
 					$pointer = "<span class='".$class_val."_pointer'><em>".$json[$i][stix]."</em></span> ";	// Только номер стиха
-				} else if ($typeId == 1) { 																	// Тип: стихи
-					$pointer = "<span class='".$class_val."_pointer'><em>".$json[$i][part].":".$json[$i][stix]."</em></span> ";	// Номер главы и номер стиха
+				} else if ($type == 'verses') { 																	// Тип: стихи
+					$pointer = "<span class='".$class_val."_pointer'><em>".$json[$i][part].":".$json[$i][stix]."</em></span> ";	// Номер главы : номер стиха
+				} else if ($type == 'b_verses') { 																	// Тип: стихи
+					$pointer = "<span class='".$class_val."_pointer'><em>".$json[$i][ru_book].".".$json[$i][part].":".$json[$i][stix]."</em></span> ";	// Книга. номер главы : номер стиха
 				} else {																					// Тип: цитата
 					$pointer = "";																			// Ничего
 				}
 				$verses = $verses.$pointer.strip_tags($json[$i][text]);
-				if ($typeId == 2) {$verses = $verses." ";}													// Если цитата, строку не переводим
+				if ($type == 'quotes') {$verses = $verses." ";}													// Если цитата, строку не переводим
 				else {$verses = $verses."<br>";}
 			}
 		}
