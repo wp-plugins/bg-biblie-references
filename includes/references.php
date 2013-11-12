@@ -18,19 +18,20 @@
     для работы требуется bg_bibfers_get_url() - см. ниже
 *******************************************************************************************/
 function bg_bibfers_bible_proc($txt) {
-
 // Ищем все вхождения ссылок на Библию
-	preg_match_all("/[\\(\\[](см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)[\\]\\)]/ui", $txt, $matches);
+//	$template = "/[\\(\\[](см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)]/ui";
+	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)\\.]?/ui";
+	preg_match_all($template, $txt, $matches);
 	
 	$cnt = count($matches[0]);
 	if ($cnt > 0) {
 		for ($i = 0; $i < $cnt; $i++) {
 		// Проверим по каждому паттерну. 
-			preg_match("/[\\(\\[](см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)[\\]\\)]/ui", $matches[0][$i], $mt);
+			preg_match($template, $matches[0][$i], $mt);
 			$cn = count($mt);
 			if ($cn > 0) {
-				$title = preg_replace("/\\s|&nbsp\\;/u", '',$mt[3]); 			// Убираем пробельные символы, включая пробел, табуляцию, переводы строки 
-				$chapter = preg_replace("/\\s|&nbsp\\;/u", '', $mt[7]);			// и другие юникодные пробельные символы, а также неразрывные пробелы &nbsp;
+				$title = preg_replace("/\\s|&nbsp\\;/u", '',$mt[5]); 			// Убираем пробельные символы, включая пробел, табуляцию, переводы строки 
+				$chapter = preg_replace("/\\s|&nbsp\\;/u", '', $mt[9]);			// и другие юникодные пробельные символы, а также неразрывные пробелы &nbsp;
 				$chapter = preg_replace("/—|–/u", '-', $chapter);				// Замена разных вариантов тире на обычный
 				preg_match("/[\\:\\,\\-]/u", $chapter, $mtchs);
 				if (strcasecmp($mtchs[0], ',') == 0) {
@@ -38,8 +39,9 @@ function bg_bibfers_bible_proc($txt) {
 				}
 				$addr = bg_bibfers_get_url($title, $chapter);
 				if (strcasecmp($addr, "") != 0) {
-					$newmt = $addr .$matches[0][$i]. "</a>";
-					$txt = str_replace($matches[0][$i], $newmt, $txt);
+					$ref = trim ( $matches[0][$i], "\x20\f\t\v\n\r\xA0\xC2" );
+					$newmt = $addr .$ref. "</a>";
+					$txt = str_replace($ref, $newmt, $txt);
 				}			
 			}
 		}
@@ -255,7 +257,7 @@ function bg_bibfers_get_url($title, $chapter) {
 					$ajax_url = plugins_url("/bible/?title=".$url[$i*2]."&chapter=".$chapter, dirname(__FILE__));
 				} else {
 				// translators: ch. - is abbr. "chapter"
-					$the_title =  bg_bibfers_getTitle($url[$i*2]).(__('ch. ', 'bg_bibfers' ))." ".$verurl;	// Название книги, номера глав и стихов						
+					$the_title =  bg_bibfers_getTitle($url[$i*2]).(__('ch. ', 'bg_bibfers' ))." ".$chapter;	// Название книги, номера глав и стихов						
 					$ajax_url = "";
 				}
 				return "<a href='".$fullurl.$opt."' class='bg_data_title ".$class_val."' target='".$target_val."' data-title='".$ajax_url."'><span class='bg_data_tooltip'>".$the_title."</span>"; 

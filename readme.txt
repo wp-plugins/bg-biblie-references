@@ -111,6 +111,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 2.3.0 =
+
+* Allowed to use references without brackets.
+
 = 2.2.1 =
 
 * Added type='b_verses' in Short code [bible].
@@ -165,7 +169,7 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 = 0.5 =
 
-* Allowed см.:(see) just after the opening bracket. Options: см.: / см. / см: / см
+* Allowed см.:(see) just after the opening bracket. Options: см.: | см. | см: | см
 * New: Pop-up window when you specify the cursor on the link contains the full title of the book of the Bible
 * Fixed some bugs. 
 
@@ -189,6 +193,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 2.3.0 =
+
+* Allowed to use references without brackets.
 
 = 2.2.1 =
 
