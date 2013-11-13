@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg_bibfers\n"
 "POT-Creation-Date: 2013-11-11 00:42+0400\n"
-"PO-Revision-Date: 2013-11-11 00:43+0400\n"
+"PO-Revision-Date: 2013-11-13 22:34+0400\n"
 "Last-Translator: Вадим <vadim.bogaiskov@gmail.com>\n"
 "Language-Team: Vadim Bogaiskov <vadim.bogaiskov@gmail.com>\n"
 "Language: ru\n"
@@ -40,7 +40,7 @@ msgstr "Лев"
 
 #: ../includes/references.php:66
 msgid "Num"
-msgstr "Чис|Числ"
+msgstr "Числ|Чис"
 
 #: ../includes/references.php:68
 msgid "Deut"
@@ -52,11 +52,11 @@ msgstr "Нав|ИсНав"
 
 #: ../includes/references.php:73
 msgid "Judg"
-msgstr "Суд|Судей"
+msgstr "Судей|Суд"
 
 #: ../includes/references.php:75
 msgid "Rth"
-msgstr "Руф|Руфь"
+msgstr "Руфь|Руф"
 
 #: ../includes/references.php:77
 msgid "1Sam"
@@ -84,7 +84,7 @@ msgstr "2Пар|2Хр|2Хрон|2Лет"
 
 #: ../includes/references.php:89
 msgid "Ezr"
-msgstr "1Ездр|1Езд|Езд|Ездр"
+msgstr "1Ездр|1Езд|Ездр|Езд"
 
 #: ../includes/references.php:91
 msgid "Nehem"
@@ -100,11 +100,11 @@ msgstr "Иов"
 
 #: ../includes/references.php:98
 msgid "Ps"
-msgstr "Пс|Псал"
+msgstr "Псал|Пс"
 
 #: ../includes/references.php:100
 msgid "Prov"
-msgstr "Притч|Прит"
+msgstr "Притчи|Притч|Прит"
 
 #: ../includes/references.php:102
 msgid "Eccl"
@@ -116,7 +116,7 @@ msgstr "Песн"
 
 #: ../includes/references.php:106
 msgid "Is"
-msgstr "Ис|Исаи"
+msgstr "Исаи|Ис"
 
 #: ../includes/references.php:108
 msgid "Jer"
@@ -136,15 +136,15 @@ msgstr "Дан"
 
 #: ../includes/references.php:117
 msgid "Hos"
-msgstr "Ос|Осии"
+msgstr "Осии|Ос"
 
 #: ../includes/references.php:119 ../includes/references.php:308
 msgid "Joel"
-msgstr "Иоил|Иоиль"
+msgstr "Иоиль|Иоил"
 
 #: ../includes/references.php:121
 msgid "Am"
-msgstr "Ам|Амос"
+msgstr "Амос|Ам"
 
 #: ../includes/references.php:123
 msgid "Avd"
@@ -152,7 +152,7 @@ msgstr "Авд"
 
 #: ../includes/references.php:125
 msgid "Jona"
-msgstr "Ион|Иона"
+msgstr "Иона|Ион"
 
 #: ../includes/references.php:127
 msgid "Mic"
@@ -208,7 +208,7 @@ msgstr "3Ездр|3Езд"
 
 #: ../includes/references.php:154
 msgid "Judf"
-msgstr "Иудиф|Иудифь"
+msgstr "Иудифь|Иудиф"
 
 #: ../includes/references.php:156
 msgid "pJer"
@@ -220,11 +220,11 @@ msgstr "Прем|ПремСол"
 
 #: ../includes/references.php:160
 msgid "Sir"
-msgstr "Сир|Сирах"
+msgstr "Сирах|Сир"
 
 #: ../includes/references.php:162
 msgid "Tov"
-msgstr "Тов|Товит"
+msgstr "Товит|Тов"
 
 #: ../includes/references.php:166
 msgid "Mt"
@@ -232,11 +232,11 @@ msgstr "Мф|Мт|Матф"
 
 #: ../includes/references.php:168
 msgid "Mk"
-msgstr "Мк|Mp|Mаp|Mapк"
+msgstr "Мк|Mp|Mapк|Map"
 
 #: ../includes/references.php:170
 msgid "Lk"
-msgstr "Лк|Лук|Луки"
+msgstr "Лк|Луки|Лук"
 
 #: ../includes/references.php:172
 msgid "Jn"
@@ -244,19 +244,19 @@ msgstr "Ин|Иоан"
 
 #: ../includes/references.php:175
 msgid "Act"
-msgstr "Деян|Деяния"
+msgstr "Деяния|Деян"
 
 #: ../includes/references.php:177
 msgid "Jac"
-msgstr "Иак"
+msgstr "Иаков|Иак"
 
 #: ../includes/references.php:179
 msgid "1Pet"
-msgstr "1Пет|1Петра"
+msgstr "1Петра|1Пет"
 
 #: ../includes/references.php:181
 msgid "2Pet"
-msgstr "2Пет|2Петра"
+msgstr "2Петра|2Пет"
 
 #: ../includes/references.php:183
 msgid "1Jn"
@@ -272,11 +272,11 @@ msgstr "3Ин|3Иоан"
 
 #: ../includes/references.php:189
 msgid "Juda"
-msgstr "Иуд"
+msgstr "Иуда|Иуд"
 
 #: ../includes/references.php:192
 msgid "Rom"
-msgstr "Рим|Римл"
+msgstr "Римл|Рим"
 
 #: ../includes/references.php:194
 msgid "1Cor"
@@ -292,11 +292,11 @@ msgstr "Гал"
 
 #: ../includes/references.php:200
 msgid "Eph"
-msgstr "Еф|Ефес"
+msgstr "Ефес|Еф"
 
 #: ../includes/references.php:202
 msgid "Phil"
-msgstr "Флп|Фил|Филип"
+msgstr "Флп|Филип|Фил"
 
 #: ../includes/references.php:204
 msgid "Col"
