@@ -20,7 +20,8 @@
 function bg_bibfers_bible_proc($txt) {
 // Ищем все вхождения ссылок на Библию
 //	$template = "/[\\(\\[](см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)]/ui";
-	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)\\.]?/ui";
+//	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)\\.]?/ui";
+	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\.\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)\\.]?/ui";
 	preg_match_all($template, $txt, $matches);
 	
 	$cnt = count($matches[0]);
@@ -33,9 +34,10 @@ function bg_bibfers_bible_proc($txt) {
 				$title = preg_replace("/\\s|&nbsp\\;/u", '',$mt[5]); 			// Убираем пробельные символы, включая пробел, табуляцию, переводы строки 
 				$chapter = preg_replace("/\\s|&nbsp\\;/u", '', $mt[9]);			// и другие юникодные пробельные символы, а также неразрывные пробелы &nbsp;
 				$chapter = preg_replace("/—|–/u", '-', $chapter);				// Замена разных вариантов тире на обычный
-				preg_match("/[\\:\\,\\-]/u", $chapter, $mtchs);
-				if (strcasecmp($mtchs[0], ',') == 0) {
-						$chapter = preg_replace("/\,/u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена запятой, заменяем ее на двоеточие.
+				preg_match("/[\\:\\,\\.\\-]/u", $chapter, $mtchs);
+				if (strcasecmp($mtchs[0], ',') == 0 || strcasecmp($mtchs[0], '.') == 0) {
+						$chapter = preg_replace("/\,/u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена запятой или точкой, заменяем ее на двоеточие.
+						$chapter = preg_replace("/\./u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена запятой или точкой, заменяем ее на двоеточие.
 				}
 				$addr = bg_bibfers_get_url($title, $chapter);
 				if (strcasecmp($addr, "") != 0) {
@@ -99,7 +101,7 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. Psalms
 		'Ps', 		__('Ps', 'bg_bibfers'), 'Ps', 'Пс|Псал', 							
 		// translators: abbr. Proverbs
-		'Prov', 	__('Prov', 'bg_bibfers'), 'Prov', 'Притч|Прит', 					
+		'Prov', 	__('Prov', 'bg_bibfers'), 'Prov', 'Притч|Прит|Притчи', 					
 		// translators: abbr. Ecclesiastes
 		'Eccl', 	__('Eccl', 'bg_bibfers'), 'Eccl', 'Еккл', 							
 		// translators: abbr. Song of Songs (Aisma Aismaton)
@@ -176,7 +178,7 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. Acts
 		'Act', 		__('Act', 'bg_bibfers'), 'Act', 'Деян|Деяния', 						
 		// translators: abbr. James
-		'Jac', 		__('Jac', 'bg_bibfers'), 'Jac', 'Иак', 								
+		'Jac', 		__('Jac', 'bg_bibfers'), 'Jac', 'Иак|Иаков', 								
 		// translators: abbr. 1 Peter
 		'1Pet', 	__('1Pet', 'bg_bibfers'), '1Pet', '1Пет|1Петра',					
 		// translators: abbr. 2 Peter
@@ -246,7 +248,7 @@ function bg_bibfers_get_url($title, $chapter) {
 	
 	$cn_url = count($url) / 2;
 	for ($i=0; $i < $cn_url; $i++) {											// Просматриваем всю таблицу соответствия сокращений наименований книг
-		$regvar = "/".$url[$i*2+1]."|".$url[$i*2]."/i";							// Формируем регулярное выражение для поиска обозначения, включая латинское наименование
+		$regvar = "/".$url[$i*2+1]."|".$url[$i*2]."/iu";						// Формируем регулярное выражение для поиска обозначения, включая латинское наименование
 		preg_match_all($regvar, $title, $mts);									// Ищем все вхождения указанного наименования
 		$cnt = count($mts[0]);
 		for ($k=0; $k < $cnt; $k++) {											// Из всех вхождений находим точное соответствие указанному наименованию
