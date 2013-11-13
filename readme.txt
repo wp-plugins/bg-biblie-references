@@ -111,6 +111,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 2.3.1 =
+
+Allowed point instead of a colon (In.3.16-18) after first chapter number.
+
 = 2.3.0 =
 
 * Allowed to use references without brackets.
@@ -193,6 +197,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 2.3.1 =
+
+Allowed point instead of a colon (In.3.16-18) after first chapter number.
 
 = 2.3.0 =
 
