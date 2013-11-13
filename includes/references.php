@@ -67,16 +67,16 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. Leviticus
 		'Lev', 		__('Lev', 'bg_bibfers'), 'Lev', 'Лев',  							
 		// translators: abbr. Numbers
-		'Num', 		__('Num', 'bg_bibfers'), 'Num', 'Чис|Числ',  						
+		'Num', 		__('Num', 'bg_bibfers'), 'Num', 'Числ|Чис',  						
 		// translators: abbr. Deuteronomy
 		'Deut', 	__('Deut', 'bg_bibfers'), 'Deut', 'Втор', 							
 		// «Пророки» (Невиим) 
 		// translators: abbr. Joshua (Iesous)
 		'Nav', 		__('Nav', 'bg_bibfers'), 'Nav', 'Нав|ИсНав', 						
 		// translators: abbr. Judges
-		'Judg', 	__('Judg', 'bg_bibfers'), 'Judg', 'Суд|Судей', 						
+		'Judg', 	__('Judg', 'bg_bibfers'), 'Judg', 'Судей|Суд', 						
 		// translators: abbr. Ruth
-		'Rth', 		__('Rth', 'bg_bibfers'), 'Rth', 'Руф|Руфь', 						
+		'Rth', 		__('Rth', 'bg_bibfers'), 'Rth', 'Руфь|Руф', 						
 		// translators: abbr. 1 Samuel (1 Kingdoms)
 		'1Sam', 	__('1Sam', 'bg_bibfers'), '1Sam', '1Цар|1Сам',						
 		// translators: abbr. 2 Samuel (2 Kingdoms)
@@ -90,7 +90,7 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. 2 Chronicles (2 Paralipomenon)
 		'2Chron', 	__('2Chron', 'bg_bibfers'), '2Chron', '2Пар|2Хр|2Хрон|2Лет',		
 		// translators: abbr. 1 Esdras
-		'Ezr', 		__('Ezr', 'bg_bibfers'), 'Ezr', '1Ездр|1Езд|Езд|Ездр', 				
+		'Ezr', 		__('Ezr', 'bg_bibfers'), 'Ezr', '1Ездр|1Езд|Ездр|Езд', 				
 		// translators: abbr. Nehemiah (2 Esdras)
 		'Nehem', 	__('Nehem', 'bg_bibfers'), 'Nehem', 'Неем', 						
 		// translators: abbr. Esther
@@ -99,15 +99,15 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. Job
 		'Job', 		__('Job', 'bg_bibfers'), 'Job', 'Иов',								
 		// translators: abbr. Psalms
-		'Ps', 		__('Ps', 'bg_bibfers'), 'Ps', 'Пс|Псал', 							
+		'Ps', 		__('Ps', 'bg_bibfers'), 'Ps', 'Псал|Пс', 							
 		// translators: abbr. Proverbs
-		'Prov', 	__('Prov', 'bg_bibfers'), 'Prov', 'Притч|Прит|Притчи', 					
+		'Prov', 	__('Prov', 'bg_bibfers'), 'Prov', 'Притчи|Притч|Прит', 					
 		// translators: abbr. Ecclesiastes
 		'Eccl', 	__('Eccl', 'bg_bibfers'), 'Eccl', 'Еккл', 							
 		// translators: abbr. Song of Songs (Aisma Aismaton)
 		'Song', 	__('Song', 'bg_bibfers'), 'Song', 'Песн',							
 		// translators: abbr. Isaiah
-		'Is', 		__('Is', 'bg_bibfers'), 'Is', 'Ис|Исаи', 							
+		'Is', 		__('Is', 'bg_bibfers'), 'Is', 'Исаи|Ис', 							
 		// translators: abbr. Jeremiah
 		'Jer', 		__('Jer', 'bg_bibfers'), 'Jer', 'Иер',								
 		// translators: abbr. Lamentations
@@ -118,15 +118,15 @@ function bg_bibfers_get_url($title, $chapter) {
 		'Dan', 		__('Dan', 'bg_bibfers'), 'Dan', 'Дан', 								
 		// Двенадцать малых пророков 
 		// translators: abbr. Hosea
-		'Hos', 		__('Hos', 'bg_bibfers'), 'Hos', 'Ос|Осии', 							
+		'Hos', 		__('Hos', 'bg_bibfers'), 'Hos', 'Осии|Ос', 							
 		// translators: abbr. Joel
-		'Joel', 	__('Joel', 'bg_bibfers'), 'Joel', 'Иоил|Иоиль', 					
+		'Joel', 	__('Joel', 'bg_bibfers'), 'Joel', 'Иоиль|Иоил', 					
 		// translators: abbr. Amos
-		'Am', 		__('Am', 'bg_bibfers'), 'Am', 'Ам|Амос',							
+		'Am', 		__('Am', 'bg_bibfers'), 'Am', 'Амос|Ам',							
 		// translators: abbr. Obadiah
 		'Avd', 		__('Avd', 'bg_bibfers'), 'Avd', 'Авд', 								
 		// translators: abbr. Jonah
-		'Jona', 	__('Jona', 'bg_bibfers'), 'Jona', 'Ион|Иона', 						
+		'Jona', 	__('Jona', 'bg_bibfers'), 'Jona', 'Иона|Ион', 						
 		// translators: abbr. Micah
 		'Mic', 		__('Mic', 'bg_bibfers'), 'Mic', 'Мих', 								
 		// translators: abbr. Nahum
@@ -155,34 +155,34 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. 3 Esdras
 		'3Ezr', 	__('3Ezr', 'bg_bibfers'), '3Ezr', '3Ездр|3Езд',						
 		// translators: abbr. Judith
-		'Judf', 	__('Judf', 'bg_bibfers'), 'Judf', 'Иудиф|Иудифь', 					
+		'Judf', 	__('Judf', 'bg_bibfers'), 'Judf', 'Иудифь|Иудиф', 					
 		// translators: abbr. Letter of Jeremiah
 		'pJer', 	__('pJer', 'bg_bibfers'), 'pJer', 'ПослИер|Посл\\.Иер', 			
 		// translators: abbr. Wisdom
 		'Solom', 	__('Solom', 'bg_bibfers'), 'Solom', 'Прем|ПремСол', 				
 		// translators: abbr. Sirach
-		'Sir', 		__('Sir', 'bg_bibfers'), 'Sir', 'Сир|Сирах', 						
+		'Sir', 		__('Sir', 'bg_bibfers'), 'Sir', 'Сирах|Сир', 						
 		// translators: abbr. Tobit (Tobias)
-		'Tov', 		__('Tov', 'bg_bibfers'), 'Tov', 'Тов|Товит', 						
+		'Tov', 		__('Tov', 'bg_bibfers'), 'Tov', 'Товит|Тов', 						
 		// Новый Завет
 		// Евангилие
 		// translators: abbr. Matthew			
 		'Mt', 		__('Mt', 'bg_bibfers'), 'Mt', 'Мф|Мт|Матф', 						
 		// translators: abbr. Mark					
-		'Mk', 		__('Mk', 'bg_bibfers'), 'Mk', 'Мк|Mp|Mаp|Mapк', 					
+		'Mk', 		__('Mk', 'bg_bibfers'), 'Mk', 'Мк|Mp|Mapк|Map', 					
 		// translators: abbr. Luke
-		'Lk', 		__('Lk', 'bg_bibfers'), 'Lk', 'Лк|Лук|Луки',						
+		'Lk', 		__('Lk', 'bg_bibfers'), 'Lk', 'Лк|Луки|Лук',						
 		// translators: abbr. John
 		'Jn', 		__('Jn', 'bg_bibfers'), 'Jn', 'Ин|Иоан',							
 		// Деяния и послания Апостолов
 		// translators: abbr. Acts
-		'Act', 		__('Act', 'bg_bibfers'), 'Act', 'Деян|Деяния', 						
+		'Act', 		__('Act', 'bg_bibfers'), 'Act', 'Деяния|Деян', 						
 		// translators: abbr. James
-		'Jac', 		__('Jac', 'bg_bibfers'), 'Jac', 'Иак|Иаков', 								
+		'Jac', 		__('Jac', 'bg_bibfers'), 'Jac', 'Иаков|Иак', 								
 		// translators: abbr. 1 Peter
-		'1Pet', 	__('1Pet', 'bg_bibfers'), '1Pet', '1Пет|1Петра',					
+		'1Pet', 	__('1Pet', 'bg_bibfers'), '1Pet', '1Петра|1Пет',					
 		// translators: abbr. 2 Peter
-		'2Pet',		__('2Pet', 'bg_bibfers'), '2Pet', '2Пет|2Петра',					
+		'2Pet',		__('2Pet', 'bg_bibfers'), '2Pet', '2Петра|2Пет',					
 		// translators: abbr. 1 John
 		'1Jn', 		__('1Jn', 'bg_bibfers'), '1Jn', '1Ин|1Иоан', 						
 		// translators: abbr. 2 John
@@ -190,10 +190,10 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. 3 John
 		'3Jn', 		__('3Jn', 'bg_bibfers'), '3Jn', '3Ин|3Иоан', 						
 		// translators: abbr. Jude
-		'Juda', 	__('Juda', 'bg_bibfers'), 'Juda', 'Иуд', 							
+		'Juda', 	__('Juda', 'bg_bibfers'), 'Juda', 'Иуда|Иуд', 							
 		// Послания апостола Павла
 		// translators: abbr. Romans
-		'Rom', 		__('Rom', 'bg_bibfers'), 'Rom', 'Рим|Римл', 						
+		'Rom', 		__('Rom', 'bg_bibfers'), 'Rom', 'Римл|Рим', 						
 		// translators: abbr. 1 Corinthians
 		'1Cor', 	__('1Cor', 'bg_bibfers'), '1Cor', '1Кор', 							
 		// translators: abbr. 2 Corinthians
@@ -201,9 +201,9 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: abbr. Galatians
 		'Gal', 		__('Gal', 'bg_bibfers'), 'Gal', 'Гал', 								
 		// translators: abbr. Ephesians
-		'Eph', 		__('Eph', 'bg_bibfers'), 'Eph', 'Еф|Ефес', 							
+		'Eph', 		__('Eph', 'bg_bibfers'), 'Eph', 'Ефес|Еф', 							
 		// translators: abbr. Philippians
-		'Phil', 	__('Phil', 'bg_bibfers'), 'Phil', 'Флп|Фил|Филип',  				
+		'Phil', 	__('Phil', 'bg_bibfers'), 'Phil', 'Флп|Филип|Фил',  				
 		// translators: abbr. Colossians
 		'Col', 		__('Col', 'bg_bibfers'), 'Col', 'Кол',								
 		// translators: abbr. 1 Thessalonians
