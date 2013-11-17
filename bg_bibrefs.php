@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-    Version: 2.3.1
+    Version: 2.3.2
     Author URI: http://bogaiskov.ru 
 */
 
@@ -36,7 +36,11 @@ if ( !defined('ABSPATH') ) {
 }
 
 // Таблица стилей для плагина
-wp_enqueue_style( "bg_bibfers_styles", plugins_url( '/css/styles.css' , plugin_basename(__FILE__) ) );
+	add_action( 'wp_enqueue_scripts' , 'bg_enqueue_frontend_styles' );
+	add_action( 'admin_enqueue_scripts' , 'bg_enqueue_frontend_styles' );
+	function bg_enqueue_frontend_styles () {
+		wp_enqueue_style( "bg_bibfers_styles", plugins_url( '/css/styles.css' , plugin_basename(__FILE__) ) );
+	}
 
 // Загрузка интернационализации
 load_plugin_textdomain( 'bg_bibfers', false, dirname( plugin_basename( __FILE__ )) . '/languages/' );
@@ -47,9 +51,12 @@ include_once('includes/references.php');
 include_once('includes/quotes.php');
 
 
-define('BG_BIBREFS_VERSION', '2.2.1');
-if ( !is_admin() ) {
-	wp_enqueue_script( 'bg_bibrefs_proc', plugins_url( 'js/bg_bibrefs.js' , __FILE__ ), false, BG_BIBREFS_VERSION, true );
+define('BG_BIBREFS_VERSION', '2.3.2');
+if ( ! is_admin() ) {
+	add_action( 'wp_enqueue_scripts' , 'bg_enqueue_frontend_scripts' );
+	function bg_enqueue_frontend_scripts () {
+		wp_enqueue_script( 'bg_bibrefs_proc', plugins_url( 'js/bg_bibrefs.js' , __FILE__ ), false, BG_BIBREFS_VERSION, true );
+	}
 }
 
 if ( defined('ABSPATH') && defined('WPINC') ) {
@@ -90,7 +97,7 @@ function bg_bibfers_qoutes( $atts ) {
 // Функция действия перед крючком добавления меню
 function bg_bibfers_add_pages() {
     // Добавим новое подменю в раздел Параметры 
-    add_options_page( __('Bible References', 'bg_bibfers' ), __('Bible References', 'bg_bibfers' ), 8, __FILE__, 'bg_bibfers_options_page');
+    add_options_page( __('Bible References', 'bg_bibfers' ), __('Bible References', 'bg_bibfers' ), 'manage_options', __FILE__, 'bg_bibfers_options_page');
 }	
 // Задание параметров по умолчанию
 function bg_bibrefs_options_ini () {
@@ -120,4 +127,4 @@ function bg_bibfers_deinstall() {
 	delete_option('bg_bibfers_submit_hidden');
 }
 
-?>
+
