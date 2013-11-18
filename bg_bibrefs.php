@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-    Version: 2.3.2
+    Version: 2.3.3
     Author URI: http://bogaiskov.ru 
 */
 
@@ -31,7 +31,7 @@
 ******************************************************************************************/
 
 // Запрет прямого запуска скрипта
-if ( !defined('ABSPATH') ) { 										
+if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
@@ -39,7 +39,7 @@ if ( !defined('ABSPATH') ) {
 	add_action( 'wp_enqueue_scripts' , 'bg_enqueue_frontend_styles' );
 	add_action( 'admin_enqueue_scripts' , 'bg_enqueue_frontend_styles' );
 	function bg_enqueue_frontend_styles () {
-		wp_enqueue_style( "bg_bibfers_styles", plugins_url( '/css/styles.css' , plugin_basename(__FILE__) ) );
+		wp_enqueue_style( "bg_bibfers_styles", plugins_url( '/css/styles.css', plugin_basename(__FILE__) ), array() , BG_BIBREFS_VERSION  );
 	}
 
 // Загрузка интернационализации
@@ -51,7 +51,7 @@ include_once('includes/references.php');
 include_once('includes/quotes.php');
 
 
-define('BG_BIBREFS_VERSION', '2.3.2');
+define('BG_BIBREFS_VERSION', '2.3.3');
 if ( ! is_admin() ) {
 	add_action( 'wp_enqueue_scripts' , 'bg_enqueue_frontend_scripts' );
 	function bg_enqueue_frontend_scripts () {
@@ -80,7 +80,6 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
  
 // Функция обработки ссылок на Библию 
 function bg_bibfers($content) {
-//	if ( is_single() || is_page())
 		$content = bg_bibfers_bible_proc($content);
 	return $content;
 }
@@ -89,7 +88,7 @@ function bg_bibfers_qoutes( $atts ) {
 	extract( shortcode_atts( array(
 		'book' => '',
 		'ch' => '1-99',
-		'type' => 'verses'		
+		'type' => 'verses'
 	), $atts ) );
 	$quote = bg_bibfers_getQuotes($book, $ch, $type);
 	return "{$quote}";
@@ -98,7 +97,7 @@ function bg_bibfers_qoutes( $atts ) {
 function bg_bibfers_add_pages() {
     // Добавим новое подменю в раздел Параметры 
     add_options_page( __('Bible References', 'bg_bibfers' ), __('Bible References', 'bg_bibfers' ), 'manage_options', __FILE__, 'bg_bibfers_options_page');
-}	
+}
 // Задание параметров по умолчанию
 function bg_bibrefs_options_ini () {
 	add_option('bg_bibfers_c_lang', "c");
