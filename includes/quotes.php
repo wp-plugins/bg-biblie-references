@@ -118,6 +118,8 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 *******************************************************************************/  
 	
 	$jj = 0;
+	$chr = 0;																					// Предыдущая глава
+
 	while (preg_match("/\\d+/u", $chapter, $matches, PREG_OFFSET_CAPTURE)) {					// Должно быть число - номер главы 
 		$jj++;																					// Защита от зацикливания (не более 10 циклов)
 		if ($jj > 10) return "***";
@@ -154,7 +156,8 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 					} else {
 						$vr2 = $vr1;
 					}
-					$verses = $verses.bg_bibfers_printVerses ($json, $ch1, $ch1, $vr1, $vr2, $type);
+					$verses = $verses.bg_bibfers_printVerses ($json, $chr, $ch1, $ch1, $vr1, $vr2, $type);
+					$chr = $ch1;
 					if ($sp == "") break;
 				}
 			}
@@ -171,7 +174,8 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 			} else {
 				$ch2 = $ch1;
 			}
-			$verses = $verses.bg_bibfers_printVerses ($json, $ch1, $ch2, 1, 999, $type);
+			$verses = $verses.bg_bibfers_printVerses ($json, $chr, $ch1, $ch2, 1, 999, $type);
+			$chr = $ch2;
 		}
 		if ($sp == "") break;
 	}
@@ -181,9 +185,8 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 	Формирование содержания цитаты
   
 *******************************************************************************/  
-function bg_bibfers_printVerses ($json, $ch1, $ch2, $vr1, $vr2, $type) {
+function bg_bibfers_printVerses ($json, $chr, $ch1, $ch2, $vr1, $vr2, $type) {
 	$verses = "";
-	$chr = 0;
 	$cn_json = count($json);
 	for ($i=0; $i < $cn_json; $i++) {
 		$ch = (int)$json[$i][part];
