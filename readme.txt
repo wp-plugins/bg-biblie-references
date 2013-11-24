@@ -113,6 +113,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 2.4.3 =
+
+* Fixed upload errors. 
+
 = 2.4.0 =
 
 * New algoritm to get and display Bible verses. 
@@ -221,6 +225,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 2.4.3 =
+
+* Fixed upload errors. 
 
 = 2.4.0 =
 
