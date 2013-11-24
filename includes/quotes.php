@@ -110,6 +110,7 @@ function bg_bibfers_getQuotes($book, $chapter, $type) {
 	$json = json_decode($code, true);															// Преобразовать json в массив
 
 	if ($type == "book") $verses = "<h3>".bg_bibfers_getTitle($book)."</h3>";
+	else if ($type == "t_verses") $verses = "<strong>".bg_bibfers_getTitle($book)."</strong><br>";
 	else $verses = "";
 		
 /*******************************************************************************
@@ -199,7 +200,7 @@ function bg_bibfers_printVerses ($json, $chr, $ch1, $ch2, $vr1, $vr2, $type) {
 						$chr = $ch;
 					}
 					$pointer = "<em>".$json[$i][stix]."</em> ";													// Только номер стиха
-				} else if ($type == 'verses') { 																// Тип: стихи
+				} else if ($type == 'verses' || $type == 't_verses') { 											// Тип: стихи или стихи с названием книг
 					$pointer = "<em>".$json[$i][part].":".$json[$i][stix]."</em> ";								// Номер главы : номер стиха
 				} else if ($type == 'b_verses') { 																// Тип: стихи
 					$pointer = "<em>".$json[$i][ru_book].".".$json[$i][part].":".$json[$i][stix]."</em> ";		// Книга. номер главы : номер стиха

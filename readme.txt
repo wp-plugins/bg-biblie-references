@@ -53,6 +53,7 @@ Russian:
 Если  type=’book’, то отображаются наименование книги, заголовки глав и стихи, каждый отдельным абзацем, с указанием его номера.
 Если  type=’verses’, то отображаются только стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’b_verses’, то отображаются только стихи, каждый отдельным абзацем, с указанием короткого названия книги, номера главы и номера стиха.
+Если  type=’t_verses’, то отображаются наименование книги и стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
 
 English: 
@@ -86,6 +87,7 @@ Here: book - the designation of the book (Latin letters), ch - numbers of chapte
 If type = 'book', it displays the name of the book, chapter and verse in separate paragraph with verse number.
 If type = 'verses', it displays only the verses in separate paragraph with chapter number and verse number.
 If type = 'b_verses', it displays only the verses in separate paragraph with short book title, chapter number and verse number.
+If type = ’t_verses’, it displays the name of the book and verse in separate paragraph with chapter number and verse number.
 If type = 'quote', it displays only the verses without dividing them into paragraphs.
 
 == Installation ==
@@ -111,10 +113,22 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+<<<<<<< .mine
+= 2.4.0 =
+
+* New algorithm to get and display Bible verses. 
+* Added type='t_verses' in Short code [bible].
+
 = 2.3.5 =
 
 * Fixed bugs. 
 
+=======
+= 2.3.5 =
+
+* Fixed bugs. 
+
+>>>>>>> .r809496
 = 2.3.4 =
 
 * Algorithm optimization. 
@@ -215,10 +229,22 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Upgrade Notice ==
 
+<<<<<<< .mine
+= 2.4.0 =
+
+* New algorithm to get and display Bible verses. 
+* Added type='t_verses' in Short code [bible].
+
 = 2.3.5 =
 
 * Fixed bugs. 
 
+=======
+= 2.3.5 =
+
+* Fixed bugs. 
+
+>>>>>>> .r809496
 = 2.3.4 =
 
 * Algorithm optimization. 
