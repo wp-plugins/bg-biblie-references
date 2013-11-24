@@ -4,11 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a>.
     Author: Vadim Bogaiskov
-<<<<<<< .mine
-    Version: 2.4.0
-=======
-    Version: 2.3.5
->>>>>>> .r809496
+    Version: 2.4.1
     Author URI: http://bogaiskov.ru 
 */
 
@@ -39,7 +35,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_BIBREFS_VERSION', '2.4.0');
+define('BG_BIBREFS_VERSION', '2.4.1');
 
 // Таблица стилей для плагина
 function bg_enqueue_frontend_styles () {
@@ -62,24 +58,11 @@ include_once('includes/settings.php');
 include_once('includes/references.php');
 include_once('includes/quotes.php');
 
-<<<<<<< .mine
-=======
-
-define('BG_BIBREFS_VERSION', '2.3.5');
-if ( ! is_admin() ) {
-	add_action( 'wp_enqueue_scripts' , 'bg_enqueue_frontend_scripts' );
-	function bg_enqueue_frontend_scripts () {
-		wp_enqueue_script( 'bg_bibrefs_proc', plugins_url( 'js/bg_bibrefs.js' , __FILE__ ), false, BG_BIBREFS_VERSION, true );
-	}
-}
-
->>>>>>> .r809496
 if ( defined('ABSPATH') && defined('WPINC') ) {
 // Регистрируем крючок для обработки контента при его загрузке
 	add_filter( 'the_content', 'bg_bibfers' );
 // Регистрируем крючок для добавления меню администратора
 	add_action('admin_menu', 'bg_bibfers_add_pages');
-	delete_option('g_bibfers_show_verses');					// Исправление ошибки - удалить строку в следующей версии
 // Регистрируем крючок на удаление плагина
 	if (function_exists('register_uninstall_hook')) {
 		register_uninstall_hook(__FILE__, 'bg_bibfers_deinstall');

@@ -113,22 +113,15 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
-<<<<<<< .mine
 = 2.4.0 =
 
-* New algorithm to get and display Bible verses. 
+* New algoritm to get and display Bible verses. 
 * Added type='t_verses' in Short code [bible].
 
 = 2.3.5 =
 
 * Fixed bugs. 
 
-=======
-= 2.3.5 =
-
-* Fixed bugs. 
-
->>>>>>> .r809496
 = 2.3.4 =
 
 * Algorithm optimization. 
@@ -229,22 +222,15 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Upgrade Notice ==
 
-<<<<<<< .mine
 = 2.4.0 =
 
-* New algorithm to get and display Bible verses. 
+* New algoritm to get and display Bible verses. 
 * Added type='t_verses' in Short code [bible].
 
 = 2.3.5 =
 
 * Fixed bugs. 
 
-=======
-= 2.3.5 =
-
-* Fixed bugs. 
-
->>>>>>> .r809496
 = 2.3.4 =
 
 * Algorithm optimization. 
