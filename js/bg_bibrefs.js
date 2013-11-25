@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
 				}
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				tooltip.append("AJAX error: "+XMLHttpRequest.status+" "+errorThrown);
+				tooltip.append(" AJAX error: "+XMLHttpRequest.status+" "+errorThrown);
 			}
 		});
 	});
@@ -51,7 +51,7 @@ jQuery('a.bg_data_title')
 					}
 				},
 				error: function (XMLHttpRequest, textStatus, errorThrown) {
-					tooltip.append("AJAX error: "+XMLHttpRequest.status+" "+errorThrown);
+					tooltip.append(" AJAX error: "+XMLHttpRequest.status+" "+errorThrown);
 				}
 			}); 
 		}
