@@ -17,7 +17,7 @@ License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-...will highlight references to the Bible text with links to site "The Alphabet of Faith" and on the interpretation of Holy Scripture on the site of Optina Pustyn monastery.
+...will highlight references to Bible text with links to site "The Alphabet of Faith" and to interpretation on site of Optina Pustyn.
 
 
 == Description ==
