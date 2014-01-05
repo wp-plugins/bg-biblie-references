@@ -57,7 +57,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Если  type=’t_verses’, то отображаются наименование книги и стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
 
-========================
+
 *This is the only plugin having links to Orthodox sites. Other plugins link to Catholic, Protestant and sectarian (eg, Pentecostals) sites.* **Be careful!**
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
