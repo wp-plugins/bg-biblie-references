@@ -22,7 +22,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-*Это пока единственный плагин имеющий ссылки на православные сайты. Другие плагины ссылаются на инославные и сектантские (например, пятидесятников) сайты.* ** Будьте бдительны! **
+*Это пока единственный плагин имеющий ссылки на православные сайты. Другие плагины ссылаются на католические, протестанские и сектантские (например, пятидесятников) сайты.* **Будьте бдительны!**
 
 Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт Православной энциклопедии "Азбука веры" (http://azbyka.ru/biblia). 
 Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. 
@@ -57,7 +57,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Если  type=’t_verses’, то отображаются наименование книги и стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
 
-* This is the only plugin having links to Orthodox sites. Other plugins link to Catholic, Protestant and sectarian (eg, Pentecostals) sites. *** Be careful! **
+* This is the only plugin having links to Orthodox sites. Other plugins link to Catholic, Protestant and sectarian (eg, Pentecostals) sites. * **Be careful!**
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
 The Bible is presented in Church, Russian, Greek, Hebrew and Latin.
