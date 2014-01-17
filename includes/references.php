@@ -35,9 +35,11 @@ function bg_bibfers_bible_proc($txt) {
 				$chapter = preg_replace("/\\s|&nbsp\\;/u", '', $mt[9]);			// и другие юникодные пробельные символы, а также неразрывные пробелы &nbsp;
 				$chapter = preg_replace("/—|–/u", '-', $chapter);				// Замена разных вариантов тире на обычный
 				preg_match("/[\\:\\,\\.\\-]/u", $chapter, $mtchs);
-				if (strcasecmp($mtchs[0], ',') == 0 || strcasecmp($mtchs[0], '.') == 0) {
-						$chapter = preg_replace("/\,/u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена запятой, заменяем ее на двоеточие.
-						$chapter = preg_replace("/\./u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена точкой, заменяем ее на двоеточие.
+				if ($mtchs) {
+					if (strcasecmp($mtchs[0], ',') == 0 || strcasecmp($mtchs[0], '.') == 0) {
+							$chapter = preg_replace("/\,/u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена запятой, заменяем ее на двоеточие.
+							$chapter = preg_replace("/\./u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена точкой, заменяем ее на двоеточие.
+					}
 				}
 				$addr = bg_bibfers_get_url($title, $chapter);
 				if (strcasecmp($addr, "") != 0) {
@@ -88,7 +90,7 @@ function bg_bibfers_get_url($title, $chapter) {
 		// translators: ch. - is abbr. "chapter"
 		$the_title =  "<strong>".bg_bibfers_getTitle($book)."</strong><br>".(__('ch. ', 'bg_bibfers' ))." ".$chapter;		// Название книги, номера глав и стихов						
 		if ($bg_verses_val == 'on') {												// Текст  стихов
-			$ajax_url = "title=".$book."&chapter=".$chapter."&type=t_verses";
+			$ajax_url = admin_url("admin-ajax.php?title=".$book."&chapter=".$chapter."&type=t_verses");
 		} else {
 			$ajax_url = "";
 		}

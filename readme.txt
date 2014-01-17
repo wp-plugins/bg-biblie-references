@@ -22,7 +22,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-*Это пока единственный плагин имеющий ссылки на православные сайты. Другие плагины ссылаются на католические, протестанские и сектантские (например, пятидесятников) сайты.* **Будьте бдительны!**
+Russian:
 
 Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт Православной энциклопедии "Азбука веры" (http://azbyka.ru/biblia). 
 Текст Библии представлен на церковнославянском, русском, греческом, еврейском и латинском языках. 
@@ -48,6 +48,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 В версии 2.0 при наведении курсора мыши на ссылку отображается всплывающая подсказка  содержащая стихи Библии (только на русском языке). 
 Файлы книг Библии взяты с сайта patriarchia.ru и теперь поставляется вместе с плагином. 
 При отключении этой опции вместо стихов отображается номер главы и номера стихов.
+Если Вы разместили свой блог на медленном сервере попробуйте опцию "Предварительная загрузка стихов из Библии во всплывающие подсказки". Предупреждение: Вы можете иметь проблемы с ограничениями Ajax-запросов на сервере.
 
 Шорт-код [bible book='Mt' ch='2:3-6' type='verses'] выводит цитаты из Библии в тексте страницы.
 Здесь: book – обозначение книги (латинскими буквами), ch – номера глав и стихов, type – формат вывода.
@@ -57,8 +58,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Если  type=’t_verses’, то отображаются наименование книги и стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
 
-
-*This is the only plugin having links to Orthodox sites. Other plugins link to Catholic, Protestant and sectarian (eg, Pentecostals) sites.* **Be careful!**
+English: 
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
 The Bible is presented in Church, Russian, Greek, Hebrew and Latin.
@@ -84,6 +84,7 @@ To customize the appearance of reference  links, use class bg_bibrefs. You can c
 In version 2.0, when you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
 Bible E-books are taken from the site patriarchia.ru and now comes with the plugin.
 If you disable this option, the number of the chapter and verse numbers will displayed instead of verses.
+If you placed your blog on a slow server try the option "Preload Bible verses in tooltips". Warning: you can have problem with ajax-requests limiting on the server.
 
 Short code [bible book = 'Mt' ch = '2 :3-6 'type =' verses'] displays quotes from the Bible in the text of the page.
 Here: book - the designation of the book (Latin letters), ch - numbers of chapters and verses, type - the output format.
@@ -115,6 +116,11 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 2. Page of Bible verses
 
 == Changelog ==
+
+= 2.5.2 =
+
+* Added option "Preload Bible verses in tooltips". Try this option on a slow server, but can be problem with ajax-requests limiting on the server.
+* Fixed bug when WP files was placed  isn't the root directory.
 
 = 2.5.1 =
 
@@ -245,6 +251,11 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 2.5.2 =
+
+* Added option "Preload Bible verses in tooltips". Try this option on a slow server, but can be problem with ajax-requests limiting on the server.
+* Fixed bug when WP files was placed  isn't the root directory.
 
 = 2.5.1 =
 
