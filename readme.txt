@@ -115,10 +115,10 @@ If type = 'quote', it displays only the verses without dividing them into paragr
 
 Short code [references type = 'list' separator = ',' list = 'o' col = 2] displays list of Bible references are finded in the article.
 Here : type - list display format(default 'list').
-If type = 'string', the list is displayed as string in tags < p>...</p >, the additional parameter 'separator' contains the separator between the references (default comma and space).
+If type = 'string', the list is displayed as string in tags `<p>...</p>`, the additional parameter 'separator' contains the separator between the references (default comma and space).
 If type = 'list', the list is displayed as list, if the additional parameter 'list' is set to 'u', then this is an unordered list, and if it is 'o', then - numbered (default 'o').
 If type = 'table', the list is displayed as table, in this case an additional parameter 'col' specifies the number of columns (default 2). List of links displayed in the table by line.
-A list of references displayed in the container < div class="bg_refs_list"> ... </div >. Use bg_refs_list class to set the properties of list objects.
+A list of references displayed in the container `<div class="bg_refs_list"> ... </div>`. Use bg_refs_list class to set the properties of list objects.
 
 == Installation ==
 
