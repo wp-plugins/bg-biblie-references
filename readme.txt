@@ -38,7 +38,7 @@ Russian:
 
 Допускается указание ссылок в квадратных скобках и без точки после наименования книги. 
 При указании номера главы (сразу после названия книги) можно использовать запятую вместо двоеточия. 
-Также допускается использовать точку с запятой вместо запятой.
+Также допускается указывать несколько книг вподряд,используя точку с запятой в качестве разделителя (см.: Зах.4; 2Кор.1:21; 1Ин.2:27).
 Пробелы игнорируются.
 
 В настройках плагина Вы можете выбрать языки, на которых будет отображаться текст Библии: церковно-славянский, русский, греческий, латинский и иврит.
@@ -56,6 +56,8 @@ Russian:
 Если Вы разместили свой блог на медленном сервере попробуйте опцию "Предварительная загрузка стихов из Библии во всплывающие подсказки". 
 Предупреждение: Вы можете иметь проблемы с ограничениями Ajax-запросов на сервере.
 
+Если Вы включите опцию 'Преобразовывать ссылки к нормализованному виду', то ссылки на Библию будут заключены в круглые скобки, в них будут удалены лишние пробелы, а названия книг, обозначения глав и стихов будут приведены к стандартному виду, соответствующему восточной традиции.
+
 Шорт-код [bible book='Mt' ch='2:3-6' type='verses'] выводит цитаты из Библии в тексте страницы.
 Здесь: book – обозначение книги, ch – номера глав и стихов, type – формат вывода.
 Если  type=’book’, то отображаются наименование книги, заголовки глав и стихи, каждый отдельным абзацем, с указанием его номера.
@@ -64,11 +66,11 @@ Russian:
 Если  type=’t_verses’, то отображаются наименование книги и стихи, каждый отдельным абзацем, с указанием номера главы и номера стиха.
 Если  type=’quote’, то отображаются только стихи без деления их на абзацы.
 
-Шорт-код [references type='list' separator=', ' list='o' col=2] выводит список ссылок на Библию, встречающиеся в статье.
+Шорт-код [references type='list' separator=', ' list='o' col=1] выводит список ссылок на Библию, встречающиеся в статье.
 Здесь: type – формат отображения списка (по умолчанию 'list').
 Если  type=’string’, то список отображается в виде строки в тегах `<p>...</p>`, при этом используется дополнительный параметр 'separator', в котором указывается разделитель между ссылками (по умолчанию запятая и пробел).
-Если  type=’list’, то список отображается в виде списка, при этом если дополнительному параметру 'list' присвоено значение 'u', то это ненумерованный список, а если 'o', то - нумерованный(по умолчанию 'o').
-Если  type=’table’, то список отображается в виде таблицы, в этом случае в дополнительном параметре 'col' указывается количество колонок(по умолчанию 2). Список ссылок выводится в таблице построчно.
+Если  type=’list’, то список отображается в виде списка, при этом если дополнительному параметру 'list' присвоено значение 'u', то это ненумерованный список, а если 'o', то - нумерованный(по умолчанию 'o'). В дополнительном параметре 'col' указывается количество колонок(по умолчанию 1). 
+Если  type=’table’, то список отображается в виде таблицы, в дополнительном параметре 'col' указывается количество колонок(по умолчанию 1). Список ссылок выводится в таблице построчно.
 Список ссылок выводится на экран в контейнере `<div class=”bg_refs_list”>…</div>`. Используйте класс bg_refs_list для задания свойств объектов списка.
 
 English: 
@@ -87,7 +89,7 @@ The plugin handles the references with the format:
 
 You can specify the reference in brackets and without a point after the title of the book. 
 If you specify a chapter (after the title of the book), you can use comma instead of colon.
-Also allowed to use a semicolon instead of a comma.
+Also you can specify a few books in row using semicolon as the separator (см.: Зах.4; 2Кор.1:21; 1Ин.2:27).
 Spaces are ignored.
 
 In the plugin settings you can select the languages ​​in which the text will be displayed Bible: Church Slavic, Russian, Greek, Latin and Hebrew.
@@ -105,6 +107,8 @@ Warning: Some methods may not be available on your server.
 If you placed your blog on a slow server try the option "Preload Bible verses in tooltips". 
 Warning: you can have problem with ajax-requests limiting on the server.
 
+If you enable the 'Convert References to the normalized form', the Bible references will within brackets, there are removed extra spaces, and the book titles, chapters and verses will be have the standard form corresponding to the Eastern tradition.
+
 Short code [bible book = 'Mt' ch = '2 :3-6 'type =' verses'] displays quotes from the Bible in the text of the page.
 Here: book - the designation of the book, ch - numbers of chapters and verses, type - the output format.
 If type = 'book', it displays the name of the book, chapter and verse in separate paragraph with verse number.
@@ -113,11 +117,11 @@ If type = 'b_verses', it displays only the verses in separate paragraph with sho
 If type = ’t_verses’, it displays the name of the book and verse in separate paragraph with chapter number and verse number.
 If type = 'quote', it displays only the verses without dividing them into paragraphs.
 
-Short code [references type = 'list' separator = ',' list = 'o' col = 2] displays list of Bible references are finded in the article.
+Short code [references type = 'list' separator = ',' list = 'o' col = 1] displays list of Bible references are finded in the article.
 Here : type - list display format(default 'list').
 If type = 'string', the list is displayed as string in tags `<p>...</p>`, the additional parameter 'separator' contains the separator between the references (default comma and space).
-If type = 'list', the list is displayed as list, if the additional parameter 'list' is set to 'u', then this is an unordered list, and if it is 'o', then - numbered (default 'o').
-If type = 'table', the list is displayed as table, in this case an additional parameter 'col' specifies the number of columns (default 2). List of links displayed in the table by line.
+If type = 'list', the list is displayed as list, if the additional parameter 'list' is set to 'u', then this is an unordered list, and if it is 'o', then - numbered (default 'o'). Аdditional parameter 'col' specifies the number of columns (default 1).
+If type = 'table', the list is displayed as table, additional parameter 'col' specifies the number of columns (default 1). List of links displayed in the table by line.
 A list of references displayed in the container `<div class="bg_refs_list"> ... </div>`. Use bg_refs_list class to set the properties of list objects.
 
 == Installation ==
@@ -142,6 +146,13 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 2. Page of Bible verses
 
 == Changelog ==
+
+= 2.7.0 =
+
+* Added option "Highlight references in the headers H1...H6". Thank you very much, Pozharko Andrej, for good idea.
+* Added option "Convert references to the normalized form". 
+* For short code [references type="list"] specified additional parameter 'col' - the number of columns.
+* Now you can specify a few books in row using semicolon as the separator (см.: Зах.4; 2Кор.1:21; 1Ин.2:27).
 
 = 2.6.0 =
 
@@ -302,6 +313,13 @@ Warning: Some methods may not be available on your server.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 2.7.0 =
+
+* Added option "Highlight references in the headers H1...H6". Thank you very much, Pozharko Andrej, for good idea.
+* Added option "Convert references to the normalized form". 
+* For short code [references type="list"] specified additional parameter 'col' - the number of columns.
+* Now you can specify a few books in row using semicolon as the separator (см.: Зах.4; 2Кор.1:21; 1Ин.2:27).
 
 = 2.6.0 =
 

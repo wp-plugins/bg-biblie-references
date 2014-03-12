@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/bg_bibfers/
     Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a> и толкование Священного Писания на сайте <a href="http://bible.optina.ru/">монастыря "Оптина Пустынь"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a> and interpretation of Scripture on the site of the <a href="http://bible.optina.ru/">monastery "Optina Pustyn"</a>.
     Author: Vadim Bogaiskov
-    Version: 2.6.0
+    Version: 2.7.0
     Author URI: http://bogaiskov.ru 
 */
 
@@ -35,7 +35,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_BIBREFS_VERSION', '2.6.0');
+define('BG_BIBREFS_VERSION', '2.7.0');
 
 // Таблица стилей для плагина
 function bg_enqueue_frontend_styles () {
@@ -110,7 +110,7 @@ function bg_bibfers_references( $atts ) {
 		'type' => 'list',
 		'separator' => ', ',
 		'list' => 'o',		
-		'col' => 2
+		'col' => 1
 	), $atts ) );
 	global $bg_bibfers_all_refs;
 	$references = '<div class="bg_refs_list">';
@@ -121,36 +121,37 @@ function bg_bibfers_references( $atts ) {
 		$ref = $bg_bibfers_all_refs[$i];
 		switch ($type) {
 		case 'string':
-			if ($i == 0) $references = $references.'<p>';
-			$references = $references.$ref;
-			if ($i == $cnt-1) $references = $references.'</p>';
-			else $references = $references.$separator;
+			if ($i == 0) $references .= '<p>';
+			$references .= $ref;
+			if ($i == $cnt-1) $references .= '</p>';
+			else $references .= $separator;
 			break;
-		case 'list':
-			if ($list == "o" || $list == "u") {
-				if ($i == 0) $references = $references.'<'.$list.'l>';
-				$references = $references.'<li>'.$ref.'</li>';
-				if ($i == $cnt-1) $references = $references.'</'.$list.'l>';
+        case 'list': 
+			if ($list == 'u' || $list == 'o') { 
+				if ($i == 0) $references .= '<table><tr valign="top"><td><'.$list.'l>'; 
+				$references .=  '<li>'.$ref.'</li>'; 
+				if (!(($i+1) % ceil($cnt/$col)) && $i+1 < $cnt) $references .= '</'.$list.'l></td><td><'.$list.'l start="'.($i+2).'">';
+				if ($i == $cnt-1) $references .= '</'.$list.'l></td></tr></table>'; 
 			}
-			break;
+            break;
 		case 'table':
-			if ($i == 0) $references = $references.'<table>';
-			if ($j == 0) $references = $references.'<tr>';
-			$references = $references.'<td>'.$ref.'</td>';
-			if ($j == $col-1) $references = $references.'</tr>';
+			if ($i == 0) $references .= '<table>';
+			if ($j == 0) $references .= '<tr>';
+			$references .= '<td>'.$ref.'</td>';
+			if ($j == $col-1) $references .= '</tr>';
 			$j++;
 			if ($j == $col) $j = 0;
 			if ($i == $cnt-1) {
 				while ($j < $col) {
-					$references = $references.'<td>&nbsp;</td>';
+					$references .= '<td>&nbsp;</td>';
 					$j++;
 				}
-				$references = $references.'</table>';
+				$references .= '</table>';
 			}
 			break;
 		}
 	}
-	$references = $references.'</div>';
+	$references .= '</div>';
 	return "{$references}";
 }
 
