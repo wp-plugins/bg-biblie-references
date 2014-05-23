@@ -37,7 +37,7 @@ jQuery(document).ready(function(){
 						tooltip.html(verses);					// Добавляем стихи в подсказку
 						el.attr('data-title', "");
 						el.attr('title', "");
-					}
+					} 
 				}
 			});
 		}
@@ -88,6 +88,7 @@ jQuery('span.bg_data_title')
    Отображение подсказки под ссылкой
 *******************************************************************************/  
 function tooltip_mini(tooltip, el, e) {	
+	if (!tooltip.html()) return;
 	// Восстанавливаем заданные значения ширины, максимальной высоты и вертикального положения подсказки 
 	tooltip.css({
 		'width': bg_bibrefs_tipWidth+"px",		// Восстанавливаем заданную ширину подсказки
