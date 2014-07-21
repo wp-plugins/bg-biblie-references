@@ -167,6 +167,11 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 
 == Changelog ==
 
+= 3.0 =
+
+* Multilanguage Bible verses in tooltip. 
+* Added Ukrainian language.
+
 = 2.10.1 =
 
 * Bug fixed.
@@ -360,6 +365,11 @@ Warning: Some methods may not be available on your server.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 3.0 =
+
+* Multilanguage Bible verses in tooltip. 
+* Added Ukrainian language.
 
 = 2.10.1 =
 
