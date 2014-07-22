@@ -82,6 +82,8 @@ Russian:
 Чтобы выделить текст стихов в подсказке для последующего копирования в буфер обмена просто щелките мышью в области стихов, например, по номеру стиха. 
 А затем используйте Ctrl+C или контекстное меню для копирования.
 
+Тепер Плагін підтримує і українську мову: текст Біблії (переклад Огієнка), назви Книг, посилання, інтерфейс.
+
 English: 
 
 The plugin will highlight references to the Bible text with links to site of Orthodox encyclopedia "The Alphabet of Faith" (http://azbyka.ru/biblia).
@@ -141,6 +143,8 @@ If you want to disable highlight of Bible references in the whole post, create a
 
 To select verses text in tooltip for later copying to the clipboard click the left mouse button in the verse field, for example, on verse number.
 And then use Ctrl+C or the context menu for copy.
+
+Now the plugin supports Ukrainian language: the Bible text(translated Ogienko), book title, links, interface.
 
 == Installation ==
 
