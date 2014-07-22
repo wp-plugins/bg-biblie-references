@@ -47,7 +47,7 @@ Russian:
 Вы также можете указать, где открывать страницу с текстом Библии - в новом или текущем окне.
 Для настройки вида ссылок используйте класс bg_bibrefs. Вы можете изменить имя класса в настройках.
 
-В версии 2.0 при наведении курсора мыши на ссылку отображается всплывающая подсказка  содержащая стихи Библии (только на русском языке). 
+При наведении курсора мыши на ссылку отображается всплывающая подсказка  содержащая стихи Библии (на русском или украинском языке). 
 Файлы книг Библии взяты с сайта patriarchia.ru и теперь поставляется вместе с плагином. 
 При отключении этой опции вместо стихов отображается номер главы и номера стихов.
 Для чтения файлов Библии используются PHP cURL или file_get_contents() или fopen(). 
@@ -109,7 +109,7 @@ For the Church Slavonic language, you can also select a font: Church Slavic font
 You can also specify where to open a page with the Bible text  - in new or current window.
 To customize the appearance of reference  links, use class bg_bibrefs. You can change the class name in the settings.
 
-In version 2.0, when you hover your mouse over the link displayed tooltip containing the Bible verses (only in Russian).
+When you hover your mouse over the link displayed tooltip containing the Bible verses (in Russian or Ukrainian).
 Bible E-books are taken from the site patriarchia.ru and now comes with the plugin.
 If you disable this option, the number of the chapter and verse numbers will displayed instead of verses.
 To read Bible files used PHP-functions cURL or file_get_contents() or fopen(). 
