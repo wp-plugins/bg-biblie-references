@@ -94,7 +94,7 @@ function bg_bibfers_bible_proc($txt, $type='', $lang='') {
 function bg_bibfers_check_links($txt, $pos) {
 
 // Ищем все вхождения ссылок <a ...</a>
-	$headers = "/<a\\s.*?<\/a>/sui";
+	$headers = "/<a\\s(.*)<\/a>/sui";
 	preg_match_all($headers, $txt, $hdr, PREG_OFFSET_CAPTURE);
 	$chrd = count($hdr[0]);
 
