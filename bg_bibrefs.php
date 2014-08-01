@@ -89,7 +89,6 @@ function set_bible_lang() {
 	global $post;
 	$bg_verses_lang_val = get_option( 'bg_bibfers_verses_lang' );
 	$bible_lang = (($bg_verses_lang_val=="")?__('ru', 'bg_bibfers' ):$bg_verses_lang_val);
-	echo $bible_lang."<br>";
 	
 	$bible_lang_posts_val = ($post)?get_post_meta($post->ID, 'bible_lang', true):"";
 	if ($bible_lang_posts_val) {
