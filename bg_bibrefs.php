@@ -274,6 +274,8 @@ add_action('save_post', 'bg_bibfers_extra_fields_update', 0);
 
 // Сохранение значений произвольных полей при сохранении поста
 function bg_bibfers_extra_fields_update( $post_id ){
+
+	if (!isset ($_POST['bg_bibfers_extra_fields_nonce']) ) return false;
     if ( !wp_verify_nonce($_POST['bg_bibfers_extra_fields_nonce'], __FILE__) ) return false;
     if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  ) return false;
     if ( !current_user_can('edit_post', $post_id) ) return false;
