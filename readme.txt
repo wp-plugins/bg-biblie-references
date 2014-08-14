@@ -40,6 +40,7 @@ Russian:
 Допускается указание ссылок в квадратных скобках и без точки после наименования книги. 
 При указании номера главы (сразу после названия книги) можно использовать запятую вместо двоеточия. 
 Также допускается указывать несколько книг вподряд,используя точку с запятой в качестве разделителя (см.: Зах.4; 2Кор.1:21; 1Ин.2:27).
+Плагин поддерживает старую нотацию с римскими цифрами в обозначении книг и глав.
 Пробелы игнорируются.
 
 В настройках плагина Вы можете выбрать языки, на которых будет отображаться текст Библии: церковно-славянский, русский, греческий, латинский и иврит.
@@ -107,6 +108,7 @@ The plugin handles the references with the format:
 You can specify the reference in brackets and without a point after the title of the book. 
 If you specify a chapter (after the title of the book), you can use comma instead of colon.
 Also you can specify a few books in row using semicolon as the separator (см.: Зах.4; 2Кор.1:21; 1Ин.2:27).
+The plugin supports the old notation with Roman numerals in naming books and in chapters.
 Spaces are ignored.
 
 In the plugin settings you can select the languages ​​in which the text will be displayed Bible: Church Slavic, Russian, Greek, Latin and Hebrew.
@@ -180,6 +182,12 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 4. Interpretation of Holy Scripture
 
 == Changelog ==
+
+= 3.5 =
+
+* The plugin supports the old notation with Roman numerals in naming books and in chapters.
+* Allow semicolons in the numbering of the chapters and verses.
+* Minor bugs fixed.
 
 = 3.4.1 =
 
@@ -407,6 +415,12 @@ Warning: Some methods may not be available on your server.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 3.5 =
+
+* The plugin supports the old notation with Roman numerals in naming books and in chapters.
+* Allow semicolons in the numbering of the chapters and verses.
+* Minor bugs fixed.
 
 = 3.4.1 =
 

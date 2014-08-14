@@ -54,7 +54,13 @@ function bg_bibfers_bible_proc($txt, $type='', $lang='') {
 //	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\;\\,\\.\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)\\.]?/ui";
 //	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\.\\-—–](\\s|&nbsp\\;)*\\d+)*)(\\s|&nbsp\\;)*[\\]\\)(\\;|\\.)]?/ui";
 //	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?(\\d?(\\s|&nbsp\\;)*[А-яA-z]{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\.\\-—–](\\s|&nbsp\\;)*\\d+)*)[(\\s|&nbsp\\;)\\]\\)(\\;|\\.)]?/ui";
-	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?([1-4]?(\\s|&nbsp\\;)*[А-яёіїєґўЁІЇЄҐЎA-z\']{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\.\\-‐‑‒–——―](\\s|&nbsp\\;)*\\d+)*)[(\\s|&nbsp\\;)\\]\\)(\\;|\\.)]?/ui";
+
+//	$template = "/(\\s|&nbsp\\;)?\\(?\\[?((\\s|&nbsp\\;)*см\\.?\\:?(\\s|&nbsp\\;)*)?([1-4]?(\\s|&nbsp\\;)*[А-яёіїєґўЁІЇЄҐЎA-z\']{2,8})((\\.|\\s|&nbsp\\;)*)(\\d+((\\s|&nbsp\\;)*[\\:\\,\\.\\-‐‑‒–——―](\\s|&nbsp\\;)*\\d+)*)[(\\s|&nbsp\\;)\\]\\)(\\;|\\.)]?/uxi";
+
+	$sps = "(?:\s|\x{00A0}|\x{00C2}|(?:&nbsp;))";
+	$dashes = "(?:[\x{2010}-\x{2015}]|(&#820[8-9];)|(&#821[0-3];))";
+	$template = "/(?<!\w)((?:[1-4]|I{1,3}|IV)?".$sps."*['A-Za-zА-Яа-яёіїєґўЁІЇЄҐЎ]{2,8})".$sps."*\.?".$sps."*((\d+|[IVXLC]+)(".$sps."*([\.;:,-]|".$dashes.")".$sps."*(\d+|[IVXLC]+))*)(?!\w)/u";
+
 	preg_match_all($template, $txt, $matches, PREG_OFFSET_CAPTURE);
 	$cnt = count($matches[0]);
 
@@ -66,7 +72,7 @@ function bg_bibfers_bible_proc($txt, $type='', $lang='') {
 	if ($bg_bibfers_option['debug']) {
 		$this_time = microtime(true)*1000;
 		$time = ($this_time- $start_time);
-		error_log(" Начало цикла проверки патернов: ". round($time, 2) ." мсек.\n", 3, $debug_file);
+		error_log("  Начальная обработка: ". round($time, 2)." мсек.\n", 3, $debug_file);
 		$start_time = $this_time;
 	}
 /*******************************************************************/	
@@ -75,14 +81,38 @@ function bg_bibfers_bible_proc($txt, $type='', $lang='') {
 		
 	// Проверим по каждому паттерну. 
 		preg_match($template, $matches[0][$i][0], $mt);
+		
+		
+		
+/****************** ОПЕРАТИВНАЯ ОТЛАДКА ****************************	
+		echo "<b>". $matches[0][$i][0]."</b> => ";
+		$mcnt = count ($mt);
+		for ($k=1; $k < $mcnt; $k++) {
+			echo " <sup>|".$k."|</sup> ".$mt[$k];
+		}	
+		echo "<br>";
+/*******************************************************************/	
 			
 		$cn = count($mt);
 		if ($cn > 0) {
 
-			$title = preg_replace("/\\s|&nbsp\\;/u", '',$mt[5]); 				// Убираем пробельные символы, включая пробел, табуляцию, переводы строки 
-			$chapter = preg_replace("/\\s|&nbsp\\;/u", '', $mt[9]);				// и другие юникодные пробельные символы, а также неразрывные пробелы &nbsp;
-			$chapter = preg_replace("/[‐‑‒–——―]/u", '-', $chapter);				// Замена разных вариантов тире на обычный
-			$chapter = preg_replace("/\\;/u", ',', $chapter);					// Замена точки с запятой на запятую
+			$title = preg_replace("/".$sps."/u", '',$mt[1]); 					// Убираем пробельные символы, включая пробел, табуляцию, переводы строки 
+			$chapter = preg_replace("/".$sps."/u", '', $mt[2]);					// и другие юникодные пробельные символы, а также неразрывные пробелы &nbsp;
+			$chapter = preg_replace("/".$dashes."/u", '-', $chapter);			// Замена разных вариантов тире на обычный
+			$chapter = preg_replace("/;/u", ',', $chapter);						// Замена точки с запятой на запятую
+			$chapter = preg_replace("/(?<=[IVXLC]),\./u", ":", $chapter);		// Римскими цифрами обозначаются только главы (после них должно идти ":", а не "," или ".")
+
+		// Замена римских цифр на арабские
+			preg_match("/(I{1,3}|IV)(?=".$sps."*['A-Za-zА-Яа-яёіїєґўЁІЇЄҐЎ]{2,8})/u", $title, $rome);
+			if ($rome) {
+				$title = preg_replace("/".$rome[0]."/u", rome_to_arab($rome[0]), $title, 1);
+			}
+			preg_match_all("/[IVXLC]+/u", $chapter, $rome, PREG_OFFSET_CAPTURE);
+			$crome = count($rome[0]);
+			for ($r = 0; $r < $crome; $r++) {
+				$chapter = preg_replace("/".$rome[0][$r][0]."/u", rome_to_arab($rome[0][$r][0]), $chapter, 1);
+			}
+
 			preg_match("/[\\:\\,\\.\\-]/u", $chapter, $mtchs);
 			if ($mtchs) {
 				if (strcasecmp($mtchs[0], ',') == 0 || strcasecmp($mtchs[0], '.') == 0) {
@@ -90,7 +120,6 @@ function bg_bibfers_bible_proc($txt, $type='', $lang='') {
 						$chapter = preg_replace("/\./u", ':', $chapter, 1);		// Первое число всегда номер главы. Если глава отделена точкой, заменяем ее на двоеточие.
 				}
 			}
-
 			$addr = bg_bibfers_get_url($title, $chapter, $lang);
 
 			if (strcasecmp($addr, "") != 0 
@@ -98,12 +127,14 @@ function bg_bibfers_bible_proc($txt, $type='', $lang='') {
 				&& (($bg_bibfers_option['headers']=='on') || bg_bibfers_check_tag($hdr_h, $matches[0][$i][1])) 
 				&&  bg_bibfers_check_tag($hdr_norefs, $matches[0][$i][1])
 				&&  bg_bibfers_check_tag($hdr_bible, $matches[0][$i][1])) {
-				$ref = trim ( $matches[0][$i][0], "\x20\f\t\v\n\r\xA0\xC2" );
+				$ref = $matches[0][$i][0];
+//				$ref = substr($ref, 1, strlen($ref)-2);							//Обрезаем первый и последний символы
+				$ref = trim ( $ref, "\x20\f\t\v\n\r\xA0\xC2" );
 				$book = bg_bibfers_getBook($title);								// Обозначение книги
 				if ($type == '' || $type == 'link') {
 					$book = bg_bibfers_getshortTitle($book);					// Короткое наименование книги
 					if ($bg_bibfers_option['norm_refs']) {						// Преобразовать ссылку к нормализованному виду
-						$newmt = '('.$addr .$book.' '.$chapter. "</a></span>".')';
+						$newmt = $addr .$book.' '.$chapter. "</a></span>";
 					}
 					else $newmt = $addr .$ref. "</a></span>";
 					$listmt = $addr .$book.' '.$chapter. "</a></span>";
@@ -172,6 +203,7 @@ function bg_bibfers_get_url($title, $chapter, $lang) {
 	global $bg_bibfers_option;
 	
 	$book = bg_bibfers_getBook($title);
+
 	if ($book != "") {						
 		$fullurl = "http://azbyka.ru/biblia/?".$book.".". $chapter;					// Полный адрес ссылки на azbyka.ru
 		$the_title =  bg_bibfers_getTitle($book)." ".$bg_bibfers_ch." ".$chapter;	// Название книги, номера глав и стихов	
@@ -188,7 +220,7 @@ function bg_bibfers_get_url($title, $chapter, $lang) {
 function bg_bibfers_getBook($title) {
 
 	global $bg_bibfers_url;
-	if (isset ($bg_bibfers_url[$title])) return $bg_bibfers_url[$title];		// Обозначение книги Библии
+	if (isset ($bg_bibfers_url[$title])) return $bg_bibfers_url[$title];// Обозначение книги Библии
 	else return "";
 }
 
@@ -198,7 +230,7 @@ function bg_bibfers_getBook($title) {
 *******************************************************************************/  
 function bg_bibfers_getTitle($book) {
 	global $bg_bibfers_bookTitle;
-	return $bg_bibfers_bookTitle[$book];							// Полное наименование книги Библии
+	return $bg_bibfers_bookTitle[$book];								// Полное наименование книги Библии
 }
 
 /*******************************************************************************
@@ -207,5 +239,27 @@ function bg_bibfers_getTitle($book) {
 *******************************************************************************/  
 function bg_bibfers_getshortTitle($book) {
 	global $bg_bibfers_shortTitle;
-	return $bg_bibfers_shortTitle[$book];						// Короткое наименование книги Библии
+	return $bg_bibfers_shortTitle[$book];								// Короткое наименование книги Библии
+}
+
+/*******************************************************************************
+  Преобразование римского числа в арабское
+
+*******************************************************************************/  
+function rome_to_arab($text) {
+$font_arab = array(1,4,5,9,10,40,50,90,100);
+$font_rome = array("I","IV","V","IX","X","XL","L","XC","C");	
+	$rezult = 0;
+	$pos = 0;
+	$n = count($font_rome) - 1;
+	$length = strlen($text);
+	while ($n >= 0 && $pos < $length) {
+		$len = strlen($font_rome[$n]);
+		if (substr($text, $pos, $len) == $font_rome[$n]) {
+			$rezult += $font_arab[$n];
+			$pos += $len;
+		}
+		else $n--;
+	}
+	return $rezult;
 }
