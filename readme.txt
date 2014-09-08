@@ -8,7 +8,7 @@ Tags: bible, orthodoxy, Christianity, Библия, православие, хр
 
 Requires at least: 3.0.1
 
-Tested up to: 3.9.1
+Tested up to: 4.0
 
 Stable tag: trunk
 
@@ -53,7 +53,7 @@ Russian:
 * церковно-славянский (Елизаветинская Библия)
 * русский (Синодальный перевод)
 * украинский (перевод И.И.Огиенко)
-* белорусский (Четвероевангелие в переводе Библейской Комиссии при Белорусском Экзархате)
+* белорусский (Новый Завет в переводе Библейской Комиссии при Белорусском Экзархате)
 * английский (King James Version)
 
 При отключении этой опции вместо стихов отображается номер главы и номера стихов.
@@ -128,7 +128,7 @@ When you hover your mouse over the link displayed tooltip containing the Bible v
 * Church Slavic (Elizabeth Bible) 
 * Russian (Synodal translation) 
 * Ukrainian (translation by I.I.Ogienko) 
-* Belarusian (Four Gospels translated Biblical Commission of the Belarusian Exarchate) 
+* Belarusian (New Testament translated by Biblical Commission of the Belarusian Exarchate) 
 * English (King James Version)
 
 If you disable this option, the number of the chapter and verse numbers will displayed instead of verses.
@@ -196,6 +196,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 4. Interpretation of Holy Scripture
 
 == Changelog ==
+
+= 3.5.2 =
+
+* Added books of New Testament in Belarusian language.
 
 = 3.5.1 =
 
@@ -433,6 +437,10 @@ Warning: Some methods may not be available on your server.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 3.5.2 =
+
+* Added books of New Testament in Belarusian language.
 
 = 3.5.1 =
 
