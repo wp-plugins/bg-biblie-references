@@ -1,6 +1,6 @@
 ﻿=== Bg Bible References ===
 
-Contributors: VBog
+Contributors: Vadim Bogaiskov
 
 Donate link: http://bogaiskov.ru/about-me/donate/
 
@@ -196,6 +196,10 @@ Any references to Bible verses on your page will be replaced by hyperlink.
 4. Interpretation of Holy Scripture
 
 == Changelog ==
+
+= 3.5.3 =
+
+* Now you can define container (div ID or <body>), inside which will display tooltips.
 
 = 3.5.2 =
 
@@ -437,6 +441,10 @@ Warning: Some methods may not be available on your server.
 * Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 3.5.3 =
+
+* Now you can define container (div ID or <body>), inside which will display tooltips.
 
 = 3.5.2 =
 
