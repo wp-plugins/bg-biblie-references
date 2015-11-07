@@ -3,7 +3,7 @@
    Формирование результатов поиска
    Вызывает bg_bibfers_printVerses() - см. ниже
 *******************************************************************************/  
-function bg_bibfers_search_result($context, $type, $lang) {
+function bg_bibfers_search_result($context, $type, $lang, $prll='') {
 	global $bg_bibfers_option;
 	global $bg_bibfers_chapter, $bg_bibfers_ch;
 	global $bg_bibfers_url, $bg_bibfers_bookTitle, $bg_bibfers_shortTitle, $bg_bibfers_bookFile;
@@ -36,7 +36,8 @@ function bg_bibfers_search_result($context, $type, $lang) {
 	$pattern  = preg_replace("/\\$/ui", '\w',  $pattern);		// $ - строго 1 любая буква
 	$pattern  = preg_replace("/\%/ui", '\w?',  $pattern);		// % - 0 или 1 любая буква
 	$pattern  = preg_replace("/\*/ui", '\w*',  $pattern);		// * - 0 или несколько любых букв
-	$pattern  = preg_replace("/\s/ui", '\s+', $pattern);		// пробельные символы в тексте Библии могут быть любыми
+	
+	$pattern  = preg_replace("/\s/ui", '\s*', $pattern);		// пробельные символы в тексте Библии могут быть любыми
 	$pattern = "/\b".$pattern."\b/ui";			// Только целое слово
 	
 //	echo "pattern=". $pattern. "<br>";					// Отладка
@@ -84,7 +85,7 @@ function bg_bibfers_search_result($context, $type, $lang) {
 // Преобразовать json в массив
 		$json = json_decode($code, true);															
 /*******************************************************************************
-   Поиск вхождения в текста стихах Библии
+   Поиск вхождения в текст стиха Библии
    и формирование результатов поиска
 *******************************************************************************/  
 		$cn_json = count($json);
@@ -93,7 +94,6 @@ function bg_bibfers_search_result($context, $type, $lang) {
 
 			if (!preg_match ( $pattern, $json[$i]['text'] )) continue;		// Если нет вхождений ищем в следующем стихе
 
-			$verses = $verses."<div>";
 			if ($bkr != $book) {
 				if ($type == "book") $verses = $verses."<h3>".bg_bibfers_getTitle($book)."</h3>";
 				else if ($type == "t_verses") $verses = $verses."<strong>".bg_bibfers_getTitle($book)."</strong><br>";
@@ -101,10 +101,9 @@ function bg_bibfers_search_result($context, $type, $lang) {
 			}
 			$ch = (int)$json[$i]['part'];
 			$vr = (int)$json[$i]['stix'];
-			$verses = $verses.bg_bibfers_printVerses ($json, $book, $chr, $ch, $ch, $vr, $vr, $type);
+			$verses = $verses.bg_bibfers_printVerses ($json, $book, $chr, $ch, $ch, $vr, $vr, $type, $lang, $prll);
 			$chr = $ch;
 			
-			$verses = $verses."</div>";	
 		}
 	}
 	$verses  = preg_replace($pattern, '<strong class="search-excerpt">\0</strong>',  $verses);

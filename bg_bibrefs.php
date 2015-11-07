@@ -1,11 +1,11 @@
 <?php
 /* 
     Plugin Name: Bg Bible References 
-    Plugin URI: http://bogaiskov.ru/bg_bibfers/
-    Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на сайт <a href="http://azbyka.ru/">Православной энциклопедии "Азбука веры"</a> и толкование Священного Писания на сайте <a href="http://bible.optina.ru/">монастыря "Оптина Пустынь"</a>. / The plugin will highlight references to the Bible text with links to site of <a href="http://azbyka.ru/">Orthodox encyclopedia "The Alphabet of Faith"</a> and interpretation of Scripture on the site of the <a href="http://bible.optina.ru/">monastery "Optina Pustyn"</a>.
-    Version: 3.9.0
+    Plugin URI: http://wp-bible.info
+    Description: Плагин подсвечивает ссылки на текст Библии с помощью гиперссылок на текст Библии и толкования Святых Отцов. / The plugin will highlight the Bible references with links to the Bible text and interpretation of the Holy Fathers.
+    Version: 3.10.4
     Author: VBog
-    Author URI: http://bogaiskov.ru 
+    Author URI: https://bogaiskov.ru 
 	License:     GPL2
 	Text Domain: bg_bibfers
 	Domain Path: /languages/
@@ -38,7 +38,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_BIBREFS_VERSION', '3.9.0');
+define('BG_BIBREFS_VERSION', '3.10.4');
 
 // Таблица стилей для плагина
 function bg_enqueue_frontend_styles () {
@@ -81,6 +81,7 @@ include_once('includes/search.php');
 if ( defined('ABSPATH') && defined('WPINC') ) {
 // Регистрируем крючок для обработки контента при его загрузке
 	add_filter( 'the_content', 'bg_bibfers' );
+	add_filter( 'the_excerpt', 'bg_bibfers' );
 // Регистрируем крючок для добавления меню администратора
 	add_action('admin_menu', 'bg_bibfers_add_pages');
 // Регистрируем крючок на удаление плагина
@@ -99,6 +100,9 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
 	add_shortcode( 'bible_search', 'bg_bibfers_bible_search' );
 // Регистрируем шорт-код bible_omnisearch
 	add_shortcode( 'bible_omnisearch', 'bg_bibfers_bible_omnisearch' );
+
+// Инициализируем значения параметров настройки плагина по умолчанию
+	bg_bibrefs_options_ini ();	
 }
 
 /*****************************************************************************************
@@ -167,16 +171,18 @@ function bg_bibfers_qoutes( $atts, $content=null ) {
 		'book' => '',
 		'ch' => '1-999',
 		'type' => 'verses',
-		'lang' => ''
+		'lang' => '',
+		'prll' => ''
 	), $atts ) );
 // Если $ref задано значение "get", то получаем $book и $ch из ссылки	
 	if ($ref == "get") {
+		$ref = $_GET["bs"];
 		$book = $_GET["book"];
 		$ch = $_GET["ch"];
 		if ($ch == "") $ch = "1-999";
 		$l = $_GET["lang"];
 		if ($l != "") $lang = $l;
-		$ref = '';
+		$prll = $_GET["prll"];
 	}
 // это и все нововведения для версии 3.7
 	
@@ -184,14 +190,11 @@ function bg_bibfers_qoutes( $atts, $content=null ) {
 	if (!$lang) $lang = set_bible_lang();
 	if ($ref == "rnd" || $ref == "days" || is_numeric ($ref)) $ref = bg_bibfers_bible_quote_refs($ref, $lang);
 	
-	if ($content) $quote = bg_bibfers_bible_proc($content, $type, $lang);
-	else if ($ref) $quote = bg_bibfers_bible_proc($ref, $type, $lang);
+	if ($content) $quote = bg_bibfers_bible_proc($content, $type, $lang, $prll);
+	else if ($ref) $quote = bg_bibfers_bible_proc($ref, $type, $lang, $prll);
 	else if ($book != '') {
-		if ($type == 'link') {
-			$addr = bg_bibfers_get_url($book, $ch, $lang);
-			if (strcasecmp($addr, "") != 0) $quote = '('.$addr .bg_bibfers_getshortTitle($book).' '.$ch. "</a></span>".')';
-			else return "";
-		} else $quote = bg_bibfers_getQuotes($book, $ch, $type, $lang);
+		if ($type == 'link') $quote = '('.bg_bibfers_get_url($book, $ch, bg_bibfers_getshortTitle($book).' '.$ch, $lang).')';
+		else $quote = bg_bibfers_getQuotes($book, $ch, $type, $lang, $prll);
 	}
 	else return "";
 	if ($quote != "") {
@@ -282,23 +285,44 @@ function bg_bibfers_norefs( $atts, $content = null ) {
 //  [bible_search]
 function bg_bibfers_bible_search( $atts ) {
 	extract( shortcode_atts( array(
-		'context' => '',
+		'context' => 'get',
+		'book' => '',
+		'ch' => '1-999',
 		'type' => 'b_verses',
-		'lang' => ''
+		'lang' => '',
+		'prll' => ''
 	), $atts ) );
 // Если $context задано значение "get", то получаем $context из ссылки	
 	if ($context == "get") {
 		$context = $_GET["bs"];
+		$book = $_GET["book"];
+		$ch = $_GET["ch"];
+		if ($ch == "") $ch = "1-999";
 		$l = $_GET["lang"];
 		if ($l != "") $lang = $l;
+		$prll = $_GET["prll"];
+		if (!isset($_GET["bs"]) && !isset($_GET["book"])) {
+			$keys = array_keys($_GET); $context = $keys[0]; 
+			$context = str_replace ( '_' , ' ' , $context );
+			$context = trim ($context);
+			if ($context == "ch" || $context == "type" || $context == "lang" || $context == "prll") $context = '';
+		}
 	}
-	
+	if ($book)	{
+		$book = bg_bibfers_getBook($book);
+		$context = $book.$ch;
+	}
 	$context = trim($context);
 	if (!$context) return "";
-	$quote = bg_bibfers_bible_proc($context, $type, $lang);
+	$quote = bg_bibfers_bible_proc($context, $type, $lang, $prll);
 	
-	if (!$quote || $quote == $context) $quote = bg_bibfers_search_result($context, $type, $lang);
+	if (!$quote || $quote == $context) $quote = bg_bibfers_search_result($context, $type, $lang, $prll);
 	
+	if ($quote != "") {
+		$class_val = get_option( 'bg_bibfers_class' );
+		if ($class_val == "") $class_val = 'bg_bibfers';
+		$quote = "<span class='".$class_val."'>".$quote."</span>";
+	}
 	return "{$quote}";
 }
 
@@ -798,4 +822,3 @@ function register_widgets() {
     register_widget("QuotesWidget");
 };
 add_action("widgets_init", "register_widgets");
-
